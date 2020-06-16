@@ -1,0 +1,3 @@
+nome <- c("Didi", "Dedé", "Mussum", "Zacarias")
+ano.nasc <- c(1936, 1936, 1941, 1934)
+# Parei em 3

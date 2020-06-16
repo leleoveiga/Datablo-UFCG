@@ -1,0 +1,5 @@
+Rodar <- function(){
+  numero <- readline(prompt = "Informe um número inteiro: ")
+  print(paste("O númeor selecionado foi: ", numero))
+}
+
