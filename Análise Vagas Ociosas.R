@@ -132,12 +132,13 @@ ggplot(data = Final,
        mapping = aes(x = `Alunos Ativos`,
                      y = `Vagas Ociosas`,
                      colour = Curso,)) +
-  geom_point()
+  geom_point() +
+  ggtitle()
 ######################
 ggplot(data = Final,
-       mapping = aes(x = `Total_Vagas`,
-                     y = `Vagas_Ociosas`,
-                     size = `Alunos_Ativos`,
+       mapping = aes(x = `Total Vagas`,
+                     y = `Vagas Ociosas`,
+                     size = `Alunos Ativos`,
                      colour = Curso)) +
   scale_size_continuous(range = c(1,15)) +
   xlab("Vagas de Ingressantes(1º e 2º Semestre)") +
@@ -145,24 +146,24 @@ ggplot(data = Final,
   geom_point()
 ########################
 ggplot(data = Final,
-       mapping = aes(x = `Total_Vagas`,
-                     y = reorder(Curso, -`Total_Vagas`))) +
+       mapping = aes(x = `Total Vagas`,
+                     y = reorder(Curso, -`Total Vagas`))) +
   geom_col() +
   xlab("Vagas") +
   ylab("Curso") +
   ggtitle("Vagas Disponíveis Anualmente Para Ingressantes por Curso - UFCG")
 ##########################
 ggplot(data = Final,
-       mapping = aes(x = `Alunos_Ativos`,
-                     y = reorder(Curso, -`Alunos_Ativos`))) +
+       mapping = aes(x = `Alunos Ativos`,
+                     y = reorder(Curso, -`Alunos Ativos`))) +
   geom_col() +
   xlab("Alunos Ativos") +
   ylab("Curso") +
   ggtitle("Alunos Ativos por Curso - UFCG")
 ###########################
 ggplot(data = Final,
-       mapping = aes(x = `Vagas_Ociosas`,
-                     y = reorder(Curso, -`Vagas_Ociosas`))) +
+       mapping = aes(x = `Vagas Ociosas`,
+                     y = reorder(Curso, -`Vagas Ociosas`))) +
   geom_col() +
   xlab("Vagas Ociosas") +
   ylab("Curso") +
@@ -211,12 +212,12 @@ ggplot(data = Turnos2,
   ggtitle("Alunos Ativos por Turnos - UFCG")
 ###########
 ggplot(data = Turnos2,
-       mapping = aes(x = reorder(Turno, -`Vagas 1º Sem`),
-                     y = `Vagas 1º Sem`)) +
+       mapping = aes(x = reorder(Turno, -`Vagas Totais`),
+                     y = `Vagas Totais`)) +
   xlab("Turnos") +
   ylab("Vagas 1º Semestre") +
   geom_col(fill = "darkblue") +
-  ggtitle("Vagas Para Ingressantes 1º Semestre por Turno - UFCG")
+  ggtitle("Vagas Totais Para Ingressantes por Turno - UFCG")
 ################
 ggplot(data = Turnos2,
        mapping = aes(x = reorder(Turno, -`Vagas 2º Sem`),
@@ -294,12 +295,12 @@ ggplot(data = Campi,
   ggtitle("Alunos Ativos por Campus - UFCG")
 ###########################
 ggplot(data = Campi,
-       mapping = aes(x = reorder(Campus, -`Vagas 2º Sem`),
-                     y = `Vagas 2º Sem`)) +
+       mapping = aes(x = reorder(Campus, -`Vagas Totais`),
+                     y = `Vagas Totais`)) +
   xlab("Campus") +
-  ylab("Vagas 2º Semestre") +
+  ylab("Vagas Totais") +
   geom_col(fill = "darkblue") +
-  ggtitle("Vagas Para Ingressantes 2º Semestre por Campus - UFCG")
+  ggtitle("Vagas Totais Para Ingressantes por Campus - UFCG")
 #########################
 ggplot(data = Campi,
        mapping = aes(x = reorder(Campus, -`Vagas 1º Sem`),
