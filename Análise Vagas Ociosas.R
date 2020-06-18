@@ -24,9 +24,9 @@ data.edit1$`Duração Padrão` <- NULL
 data.edit1$Área <- NULL 
 data.edit1$`Fator de Retenção` <- NULL 
 data.edit1$`Alunos Ativos` <- as.numeric(levels(data.edit1$`Alunos Ativos`))[data.edit1$`Alunos Ativos`]
-data.edit1$`Vaga 1 Sem` <- as.numeric(data.edit1$`Vaga 1 Sem`) 
-data.edit1$`Vaga 2 Sem` <- as.numeric(data.edit1$`Vaga 2 Sem`) 
-data.edit1$`Vagas Ociosas` <- as.numeric(data.edit1$`Vagas Ociosas`)
+data.edit1$`Vaga 1 Sem` <- as.numeric(levels(data.edit1$`Vaga 1 Sem`))[data.edit1$`Vaga 1 Sem`] 
+data.edit1$`Vaga 2 Sem` <- as.numeric(levels(data.edit1$`Vaga 2 Sem`))[data.edit1$`Vaga 2 Sem`] 
+data.edit1$`Vagas Ociosas` <- as.numeric(levels(data.edit1$`Vagas Ociosas`))[data.edit1$`Vagas Ociosas`] 
 
 #Fundindo Linhas:
 data.edit2 <- data.edit1[c(-1,-47,-95,-2),] #excluindo linhas vazias
@@ -43,6 +43,7 @@ data.test$Turno <- str_extract(data.test$Curso, "\\- [:upper:]") #extrair de tur
 data.test$Turno <- str_sub(data.test$Curso, start = -1) #Pegar apenas o último caractere
 data.test$Turno <- as.factor(data.test$Turno)
 data.test$Curso <- as.character(data.test$Curso)
+
 
 #Tratando Strings:
 levels(data.test$Turno)
