@@ -2,7 +2,7 @@
 Projeto iniciado por estudantes da UFCG com intuito de mostrar dados sobre a instituição de forma clara e intuitiva.
 
 ### Integrantes:
-**Yohan Lopes** | **email**
+**Yohan Lopes** | **yohanhxh@gmail.com**
 --- | ---
 **Leonardo Veiga** | **leonardo.porfirio@ccc.ufcg.edu.br**
 
