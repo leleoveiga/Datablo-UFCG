@@ -86,9 +86,15 @@ vagas_ociosas <- as.data.frame(vagas_ociosas)
 Final.Separado <- inner_join(total_vagas1, total_vagas2, by = "Curso")
 Final.Separado <- inner_join(Final.Separado, vagas_ociosas, by = "Curso")  
 Final.Separado <- inner_join(Final.Separado, alunos_ativos, by = "Curso")  
+<<<<<<< HEAD:Análise Vagas Ociosas.R
 
 names(Final.Separado)[2:5] <- c("Vagas 1º Sem","Vagas 2º Sem","Vagas Ociosas","Alunos Ativos")
 
+=======
+
+names(Final.Separado)[2:5] <- c("Vagas 1º Sem","Vagas 2º Sem","Vagas Ociosas","Alunos Ativos")
+
+>>>>>>> c47938c144a636a06ab72d032b8e502f3676db19:src/Análise Vagas Ociosas.R
 #Criando agrupamentos por curso
 total_vagas <- data.edit1 %>% #Criando primeiro fragmento (total de vagas 1 e total vagas 2)
   group_by(Curso) %>% 
@@ -138,6 +144,7 @@ ggplot(data = Final.Total,
   ylab("Curso") +
   ggtitle("Cursos - UFCG")
 
+<<<<<<< HEAD:Análise Vagas Ociosas.R
 ##########################
 ggplot(fill = "#08b5ff", data = Final.Total,
        mapping = aes(fill= `Vagas Ociosas`, x = `Alunos Ativos`,
@@ -147,6 +154,17 @@ ggplot(fill = "#08b5ff", data = Final.Total,
   ylab("Curso") +
   ggtitle("Cursos - UFCG")
 ##########################
+=======
+##########################
+ggplot(fill = "#08b5ff", data = Final.Total,
+       mapping = aes(fill= `Vagas Ociosas`, x = `Alunos Ativos`,
+                     y = reorder(Curso, -`Alunos Ativos`))) +
+  geom_bar(fill = "#00628c", position="stack", stat = "identity") +
+  xlab("Vagas Ociosas / Alunos Ativos") +
+  ylab("Curso") +
+  ggtitle("Cursos - UFCG")
+##########################
+>>>>>>> c47938c144a636a06ab72d032b8e502f3676db19:src/Análise Vagas Ociosas.R
 ggplot(data = Final.Total,
        mapping = aes(x = `Alunos Ativos`,
                      y = reorder(Curso, -`Alunos Ativos`))) +
