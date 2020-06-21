@@ -8,7 +8,7 @@ library(purrr)
 #           Compilar mesmos cursos em uma linha única
 #OBJ: Gráfico de barras, mostrando a quantidade de vagas ociosas por curso
 
-vagasOciosasPorCurso <- read.csv(file = 'vagasOciosasPorCurso.csv')
+vagasOciosasPorCurso <- read.csv(file = '~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/vagasOciosasPorCurso.csv')
 
 #Correção dos Títulos das Colunas:
 names(vagasOciosasPorCurso)[1:10] <- c("Código","Curso","Campus","Alunos Ativos","Vaga 1 Sem","Vaga 2 Sem","Área","Duração Padrão","Fator de Retenção","Vagas Ociosas")
@@ -86,15 +86,9 @@ vagas_ociosas <- as.data.frame(vagas_ociosas)
 Final.Separado <- inner_join(total_vagas1, total_vagas2, by = "Curso")
 Final.Separado <- inner_join(Final.Separado, vagas_ociosas, by = "Curso")  
 Final.Separado <- inner_join(Final.Separado, alunos_ativos, by = "Curso")  
-<<<<<<< HEAD:Análise Vagas Ociosas.R
 
 names(Final.Separado)[2:5] <- c("Vagas 1º Sem","Vagas 2º Sem","Vagas Ociosas","Alunos Ativos")
 
-=======
-
-names(Final.Separado)[2:5] <- c("Vagas 1º Sem","Vagas 2º Sem","Vagas Ociosas","Alunos Ativos")
-
->>>>>>> c47938c144a636a06ab72d032b8e502f3676db19:src/Análise Vagas Ociosas.R
 #Criando agrupamentos por curso
 total_vagas <- data.edit1 %>% #Criando primeiro fragmento (total de vagas 1 e total vagas 2)
   group_by(Curso) %>% 
@@ -120,14 +114,6 @@ ggplot(data = Final.Total,
 ########################
 ggplot(data = Final.Total,
        mapping = aes(x = `Total Vagas`,
-                     y = reorder(`Curso`, -`Total Vagas`))) +
-  geom_col() +
-  xlab("Vagas") +
-  ylab("Curso") +
-  ggtitle("Vagas Disponíveis Anualmente Para Ingressantes por Curso - UFCG")
-########################
-ggplot(data = Final.Total,
-       mapping = aes(x = `Total Vagas`,
                      y = reorder(Curso, -`Total Vagas`))) +
   geom_col() +
   xlab("Vagas") +
@@ -135,16 +121,14 @@ ggplot(data = Final.Total,
   ggtitle("Vagas Disponíveis Anualmente Para Ingressantes por Curso - UFCG")
 ##########################
 ggplot(data = Final.Total,
-       mapping = aes(x = `Vagas Ociosas`,
-                     y = reorder(Curso, -`Alunos Ativos`))) +
-  geom_bar(fill = "#08b5ff", mapping = aes(x = `Alunos Ativos`,
-                                 y = reorder(Curso, -`Alunos Ativos`)), stat = "identity") +
+       mapping = aes(x = `Alunos Ativos`,
+                     y = reorder(Curso, -`Alunos Ativos`), label = `Alunos Ativos`)) +
   geom_bar(fill = "#00628c", stat = "identity") +
+  geom_bar(fill = "#08b5ff", mapping = aes(x = `Vagas Ociosas`,
+                                 y = reorder(Curso, -`Alunos Ativos`)), stat = "identity") +
   xlab("Vagas Ociosas / Alunos Ativos") +
   ylab("Curso") +
   ggtitle("Cursos - UFCG")
-
-<<<<<<< HEAD:Análise Vagas Ociosas.R
 ##########################
 ggplot(fill = "#08b5ff", data = Final.Total,
        mapping = aes(fill= `Vagas Ociosas`, x = `Alunos Ativos`,
@@ -154,21 +138,11 @@ ggplot(fill = "#08b5ff", data = Final.Total,
   ylab("Curso") +
   ggtitle("Cursos - UFCG")
 ##########################
-=======
-##########################
-ggplot(fill = "#08b5ff", data = Final.Total,
-       mapping = aes(fill= `Vagas Ociosas`, x = `Alunos Ativos`,
-                     y = reorder(Curso, -`Alunos Ativos`))) +
-  geom_bar(fill = "#00628c", position="stack", stat = "identity") +
-  xlab("Vagas Ociosas / Alunos Ativos") +
-  ylab("Curso") +
-  ggtitle("Cursos - UFCG")
-##########################
->>>>>>> c47938c144a636a06ab72d032b8e502f3676db19:src/Análise Vagas Ociosas.R
 ggplot(data = Final.Total,
        mapping = aes(x = `Alunos Ativos`,
-                     y = reorder(Curso, -`Alunos Ativos`))) +
-  geom_col() +
+                     y = reorder(Curso, -`Alunos Ativos`), label = `Alunos Ativos`)) +
+  geom_col(fill = "#0366d6") +
+  geom_text(size = 2.6, hjust = -0.5) +
   xlab("Alunos Ativos") +
   ylab("Curso") +
   ggtitle("Alunos Ativos por Curso - UFCG")
