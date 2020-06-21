@@ -142,7 +142,7 @@ ggplot(data = Final.Total,
        mapping = aes(x = `Alunos Ativos`,
                      y = reorder(Curso, -`Alunos Ativos`), label = `Alunos Ativos`)) +
   geom_col(fill = "#0366d6") +
-  geom_text(size = 2.6, hjust = -0.5) +
+  geom_text(size = 4, hjust = -0.5) +
   xlab("Alunos Ativos") +
   ylab("Curso") +
   ggtitle("Alunos Ativos por Curso - UFCG")
