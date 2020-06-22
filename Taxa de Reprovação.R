@@ -268,9 +268,9 @@ reprovacao_10$Matrículas.2 <- as.numeric(as.character(reprovacao_10$Matrículas
 
 reprovacao_10 <- arrange(reprovacao_10, Curso)
 
-reprovacao_10[c(10:17),1] <- "CIÊNCIAS"
-reprovacao_10[c(54:59),1] <- "ENGENHARIA ELÉTRICA"
-reprovacao_10[c(86:98),1] <- "LETRAS"
+reprovacao_10[c(8:15),1] <- "CIÊNCIAS"
+reprovacao_10[c(52:57),1] <- "ENGENHARIA ELÉTRICA"
+reprovacao_10[c(84:96),1] <- "LETRAS"
 
 reprovacao_10 <- reprovacao_10 %>% 
   group_by(Curso) %>% 
@@ -278,8 +278,6 @@ reprovacao_10 <- reprovacao_10 %>%
             Matrículas.1 = sum(Matrículas.1),
             Reprovações.2 = sum(Reprovações.2),
             Matrículas.2 = sum(Matrículas.2))
-
-reprovacao_10 <- arrange(reprovacao_10, Curso)
 
 ####Recalculando Porcentagens 2010####
 
@@ -293,7 +291,7 @@ porcentagem.total.2 = round(
 
 reprovacao_10 <- add_column(reprovacao_10, Porcentagem.2 = porcentagem.total.2, .after = 6)
 
-write_delim(reprovacao_10, "Reprovacao_2008.csv", delim = ";")
+write_delim(reprovacao_10, "Reprovacao_2010.csv", delim = ";")
 
 
 
