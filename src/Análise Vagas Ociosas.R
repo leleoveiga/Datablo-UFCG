@@ -129,18 +129,11 @@ ggplot(data = Final.Total,
   xlab("Vagas Ociosas / Alunos Ativos") +
   ylab("Curso") +
   ggtitle("Cursos - UFCG")
-##########################
-ggplot(fill = "#08b5ff", data = Final.Total,
-       mapping = aes(fill= `Vagas Ociosas`, x = `Alunos Ativos`,
-                     y = reorder(Curso, -`Alunos Ativos`))) +
-  geom_bar(fill = "#00628c", position="stack", stat = "identity") +
-  xlab("Vagas Ociosas / Alunos Ativos") +
-  ylab("Curso") +
-  ggtitle("Cursos - UFCG")
-##########################
+###########################
 ggplot(data = Final.Total,
        mapping = aes(x = `Alunos Ativos`,
                      y = reorder(Curso, -`Alunos Ativos`), label = `Alunos Ativos`)) +
+  coord_cartesian(xlim = c(50, 1000)) +
   geom_col(fill = "#0366d6") +
   geom_text(size = 4, hjust = -0.5) +
   xlab("Alunos Ativos") +
