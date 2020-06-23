@@ -8,7 +8,7 @@ Projeto iniciado por estudantes da UFCG com intuito de mostrar dados sobre a ins
 
 ### Alguns gráficos feitos:
 
-**Alunos ativos em todos os campus:**
+**Alunos ativos em todos os campus (2019):**
 ![alt text](https://i.imgur.com/7iCWxM9.png)
 
 **Vagas de ingressantes, vagas ociosas e alunos ativos num gráfico de dispersão:**
