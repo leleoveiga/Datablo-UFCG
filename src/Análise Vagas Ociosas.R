@@ -123,17 +123,44 @@ ggplot(data = Final.Total,
   xlab("Vagas") +
   ylab("Curso") +
   ggtitle("Vagas Disponíveis Anualmente Para Ingressantes por Curso - UFCG")
-##########################
+#### 2 gráficos sobrepostos (gambiarra) ####
 ggplot(data = Final.Total,
        mapping = aes(x = `Alunos Ativos`,
-                     y = reorder(Curso, -`Alunos Ativos`), label = `Alunos Ativos`)) +
+                     y = reorder(Curso, -`Alunos Ativos`))) +
   geom_bar(fill = "#00628c", stat = "identity") +
   geom_bar(fill = "#08b5ff", mapping = aes(x = `Vagas Ociosas`,
                                  y = reorder(Curso, -`Alunos Ativos`)), stat = "identity") +
   xlab("Vagas Ociosas / Alunos Ativos") +
   ylab("Curso") +
   ggtitle("Cursos - UFCG")
-###########################
+#### gráfico com cores representando dados e muito mais####
+ggplot(data = Final.Total,
+       mapping = aes(fill = `Vagas Ociosas`, x = `Alunos Ativos`,
+                     y = reorder(Curso, -`Alunos Ativos`), label = `Alunos Ativos`)) +
+  geom_bar(stat = "identity") +
+  scale_fill_viridis_c(option = "cividis") + #uma palheta de cores personalizada
+  theme(
+    plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
+    plot.background = element_rect(fill="gray20"),
+    panel.background = element_rect(fill="gray20"),
+    panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"),
+    panel.grid.major = element_line(colour ="gray30"),
+    panel.grid.minor = element_blank(),
+    #axis.line = element_blank(),
+    #axis.ticks = element_blank(), 
+    axis.text = element_text(color="white"), #cor do texto dos eixos
+    axis.text.y  = element_text(hjust=1),
+    legend.text = element_text(color="white", size=rel(1)),
+    legend.background = element_rect(fill="gray20"),
+    # legend.position = "bottom", #posicao do preenchimento
+    legend.title= element_text(color="white") #legenda das cores
+  ) +
+  geom_text(size = rel(4), hjust = -0.5, color = "white") +
+  coord_cartesian(xlim = c(50, 1000)) +
+  xlab("Vagas Ociosas / Alunos Ativos") +
+  ylab("Curso") +
+  ggtitle("Cursos - UFCG")
+#### Gráfico com gap consertado ####
 ggplot(data = Final.Total,
        mapping = aes(x = `Alunos Ativos`,
                      y = reorder(Curso, -`Alunos Ativos`), label = `Alunos Ativos`)) +
