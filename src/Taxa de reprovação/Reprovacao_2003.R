@@ -4,8 +4,11 @@ library(tidyr)
 library(ggplot2)
 library(purrr)
 library(readr)
-####Limpeza dos Dados 2003####
+library(tibble)
 
+taxaReprovacaoAnoPorCurso2003 = read.csv(file = "~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/Taxas de Reprovação/taxaReprovacaoAnoPorCurso2003.csv")
+
+####Limpeza dos Dados 2003####
 names(taxaReprovacaoAnoPorCurso2003)[1:7] <- c(
   "Curso", "Reprovações.1", "Matrículas.1", "%.1", "Reprovações.2", "Matrículas.2", "%.2")
 
@@ -59,21 +62,6 @@ porcentagem.total.2 = round(
 
 reprovacao_03 <- add_column(reprovacao_03, Porcentagem.2 = porcentagem.total.2, .after = 6)
 
-write_delim(reprovacao_03, "Reprovação 2003.csv", delim = ";")
+reprovacao_03[is.na(reprovacao_03)] <- 0.0
 
-####Limpeza dos Dados 2004####
-
-reprovacao_04 <- reprovacao_04[c(-1,-2,-3,-28,-29,-58,-59,-88,-89),]
-
-names(reprovacao_04)[1:7] <- c(
-  "Curso", "Reprovações.1", "Matrículas.1", "%.1", "Reprovações.2", "Matrículas.2", "%.2")
-
-reprovacao_04$Curso <- str_sub(reprovacao_04$Curso, start = 12 ) 
-reprovacao_04$Curso <- str_sub(reprovacao_04$Curso, end = -1)
-
-
-
-
-
-
-
+write_delim(reprovacao_03, "~/Documentos/Analise-de-Dados-da-UFCG/Dados Processados/Taxas de reprovação/Reprovacao2003.csv", delim = ";")

@@ -48,4 +48,6 @@ dfAgrupado <- add_column(dfAgrupado, Porcentagem.1 = porcentagem.total.1, .after
 porcentagem.total.2 = round((dfAgrupado$Reprovações.2 / dfAgrupado$Matrículas.2) * 100, digits = 1)
 dfAgrupado <- add_column(dfAgrupado, Porcentagem.2 = porcentagem.total.2, .after = 6)
 
+dfAgrupado[is.na(dfAgrupado)] <- 0.0
+
 write.csv(dfAgrupado, file = "~/Documentos/Analise-de-Dados-da-UFCG/Dados Processados/Taxas de reprovação/Reprovacao_2019.csv")
