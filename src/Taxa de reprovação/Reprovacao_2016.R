@@ -51,4 +51,7 @@ porcentagem.total.2 = round(
 
 reprovacao_16 <- add_column(reprovacao_16, Porcentagem.2 = porcentagem.total.2, .after = 6)
 
+reprovacao_16[is.na(reprovacao_16)] <- 0.0
+
 write_delim(reprovacao_16, "Reprovacao_2016.csv", delim = ";")
+

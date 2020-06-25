@@ -54,4 +54,8 @@ dfAgrupado <- add_column(dfAgrupado, Porcentagem.1 = porcentagem.total.1, .after
 porcentagem.total.2 = round((dfAgrupado$Reprovações.2 / dfAgrupado$Matrículas.2) * 100, digits = 1)
 dfAgrupado <- add_column(dfAgrupado, Porcentagem.2 = porcentagem.total.2, .after = 6)
 
-write.csv(dfAgrupado, file = "Reprovacao2002.csv")
+dfAgrupado[is.na(dfAgrupado)] <- 0.0
+
+write_delim(dfAgrupado, "Reprovacao_2002.csv", delim = ";")
+
+

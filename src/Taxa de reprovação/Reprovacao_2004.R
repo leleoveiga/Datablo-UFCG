@@ -53,3 +53,8 @@ porcentagem.total.2 = round(
   (reprovacao_04$Reprovações.2 / reprovacao_04$Matrículas.2) * 100, digits = 1)
 
 reprovacao_04 <- add_column(reprovacao_04, Porcentagem.2 = porcentagem.total.2, .after = 6)
+
+reprovacao_04[is.na(reprovacao_04)] <- 0.0
+
+write_delim(reprovacao_04, "Reprovacao_2004.csv", delim = ";")
+
