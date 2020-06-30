@@ -37,6 +37,44 @@ write_delim(Reprovacao_2015, "Reprovação_2015.csv", delim = ";")
 write_delim(Reprovacao_2017, "Reprovação_2017.csv", delim = ";")
 write_delim(Reprovacao_2019, "Reprovação_2019.csv", delim = ";")
 
+Reprovacao_2002$Porcentagem.1 <- NULL
+Reprovacao_2003$Porcentagem.1 <- NULL
+Reprovacao_2004$Porcentagem.1 <- NULL
+Reprovacao_2005$Porcentagem.1 <- NULL
+Reprovacao_2006$Porcentagem.1 <- NULL
+Reprovacao_2007$Porcentagem.1 <- NULL
+Reprovacao_2008$Porcentagem.1 <- NULL
+Reprovacao_2009$Porcentagem.1 <- NULL
+Reprovacao_2010$Porcentagem.1 <- NULL
+Reprovacao_2011$Porcentagem.1 <- NULL
+Reprovacao_2012$Porcentagem.1 <- NULL
+Reprovacao_2013$Porcentagem.1 <- NULL
+Reprovacao_2014$Porcentagem.1 <- NULL
+Reprovacao_2015$Porcentagem.1 <- NULL
+Reprovacao_2016$Porcentagem.1 <- NULL
+Reprovacao_2017$Porcentagem.1 <- NULL
+Reprovacao_2018$Porcentagem.1 <- NULL
+Reprovacao_2019$Porcentagem.1 <- NULL
+
+Reprovacao_2002$Porcentagem.2 <- NULL
+Reprovacao_2003$Porcentagem.2 <- NULL
+Reprovacao_2004$Porcentagem.2 <- NULL
+Reprovacao_2005$Porcentagem.2 <- NULL
+Reprovacao_2006$Porcentagem.2 <- NULL
+Reprovacao_2007$Porcentagem.2 <- NULL
+Reprovacao_2008$Porcentagem.2 <- NULL
+Reprovacao_2009$Porcentagem.2 <- NULL
+Reprovacao_2010$Porcentagem.2 <- NULL
+Reprovacao_2011$Porcentagem.2 <- NULL
+Reprovacao_2012$Porcentagem.2 <- NULL
+Reprovacao_2013$Porcentagem.2 <- NULL
+Reprovacao_2014$Porcentagem.2 <- NULL
+Reprovacao_2015$Porcentagem.2 <- NULL
+Reprovacao_2016$Porcentagem.2 <- NULL
+Reprovacao_2017$Porcentagem.2 <- NULL
+Reprovacao_2018$Porcentagem.2 <- NULL
+Reprovacao_2019$Porcentagem.2 <- NULL
+
 ####Adição de Colunas Fator Ano####
 
 Reprovacao_2002 <- add_column(Reprovacao_2002, Ano = 2002, .after = 7)
@@ -59,7 +97,24 @@ Reprovacao_2018 <- add_column(Reprovacao_2018, Ano = 2018, .after = 7)
 Reprovacao_2019 <- add_column(Reprovacao_2019, Ano = 2019, .after = 7)
 
 
-
+Reprovacao_2002$Ano <- as.factor(as.numeric(Reprovacao_2002))
+Reprovacao_2003$Ano <- as.factor(as.numeric(Reprovacao_2003))
+Reprovacao_2004$Ano <- as.factor(as.numeric(Reprovacao_2004))
+Reprovacao_2005$Ano <- as.factor(as.numeric(Reprovacao_2005))
+Reprovacao_2006$Ano <- as.factor(as.numeric(Reprovacao_2006))
+Reprovacao_2007$Ano <- as.factor(as.numeric(Reprovacao_2007))
+Reprovacao_2008$Ano <- as.factor(as.numeric(Reprovacao_2008))
+Reprovacao_2009$Ano <- as.factor(as.numeric(Reprovacao_2009))
+Reprovacao_2010$Ano <- as.factor(as.numeric(Reprovacao_2010))
+Reprovacao_2011$Ano <- as.factor(as.numeric(Reprovacao_2011))
+Reprovacao_2012$Ano <- as.factor(as.numeric(Reprovacao_2012))
+Reprovacao_2013$Ano <- as.factor(as.numeric(Reprovacao_2013))
+Reprovacao_2014$Ano <- as.factor(as.numeric(Reprovacao_2014))
+Reprovacao_2015$Ano <- as.factor(as.numeric(Reprovacao_2015))
+Reprovacao_2016$Ano <- as.factor(as.numeric(Reprovacao_2016))
+Reprovacao_2017$Ano <- as.factor(as.numeric(Reprovacao_2017))
+Reprovacao_2018$Ano <- as.factor(as.numeric(Reprovacao_2018))
+Reprovacao_2019$Ano <- as.factor(as.numeric(Reprovacao_2019))
 
 
 
