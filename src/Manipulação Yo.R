@@ -289,8 +289,6 @@ Percentual = round(
 
 Reprovacao_2019 <- add_column(Reprovacao_2019, Percentual = Percentual, .after = 3)
 
-
-
 ####Criando MegaDf####
 
 
