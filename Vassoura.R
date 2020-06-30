@@ -42,7 +42,7 @@ Reprovacao_2014[is.na(Reprovacao_2014)] <- 0.0
 Reprovacao_2016[is.na(Reprovacao_2016)] <- 0.0
 Reprovacao_2018[is.na(Reprovacao_2018)] <- 0.0
 
-write_delim(Reprovacao_2002, "Reprovação_2002.csv", delim = ";")
+write_delim(Reprovacao_2002, "Reprovacao_2002.csv", delim = ";")
 write_delim(Reprovacao_2004, "Reprovação_2004.csv", delim = ";")
 write_delim(Reprovacao_2006, "Reprovação_2006.csv", delim = ";")
 write_delim(Reprovacao_2008, "Reprovação_2008.csv", delim = ";")
@@ -52,7 +52,7 @@ write_delim(Reprovacao_2014, "Reprovação_2014.csv", delim = ";")
 write_delim(Reprovacao_2016, "Reprovação_2016.csv", delim = ";")
 write_delim(Reprovacao_2018, "Reprovação_2018.csv", delim = ";")
 
-
+Reprovacao_2002 <- Reprovacao_2002[,-1]
 
 
 
