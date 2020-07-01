@@ -5,9 +5,10 @@ library(tidyr)
 library(ggplot2)
 library(purrr)
 library(tibble)
+library(readr)
 
-dfPadrao <- read.csv(file = "~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/Taxas de Reprovação/taxaReprovacaoAnoPorCurso2005.csv")
-dfEditado <- read.csv(file = "~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/Taxas de Reprovação/taxaReprovacaoAnoPorCurso2005.csv")
+dfPadrao <- read.csv(file = "~/Analise-de-Dados-da-UFCG/Dados Crus/Taxas de Reprovação/taxaReprovacaoAnoPorCurso2005.csv", encoding = "UTF-8")
+dfEditado <- read.csv(file = "~/Analise-de-Dados-da-UFCG/Dados Crus/Taxas de Reprovação/taxaReprovacaoAnoPorCurso2005.csv", encoding = "UTF-8")
 
 ####Limpeza e organização básica do dataframe####
 names(dfEditado)[1:7] <- c("Curso", "Reprovações.1", "Matrículas.1", "Porcentagem.1"
@@ -29,12 +30,15 @@ dfEditado$Curso <- str_replace(dfEditado$Curso, "[MNDV]$", "")
 dfEditado$Curso <- str_trim(dfEditado$Curso)
 dfEditado$Curso <- str_replace(dfEditado$Curso, "[\\-]$","")
 dfEditado$Curso <- str_trim(dfEditado$Curso)
+dfEditado$Curso <- str_replace(dfEditado$Curso, "[\\(]+[:alpha:]+[\\)]", "")
 
 ####Renomeando os cursos pra depois unificar####
 dfEditado$Curso[1:6] <- str_sub(dfEditado$Curso[1:6], end = 13) #administração
 dfEditado$Curso[9:18] <- str_sub(dfEditado$Curso[9:18], end = 8) #ciências geral
 dfEditado$Curso[24:27] <- str_sub(dfEditado$Curso[24:27], end = 16) #ciências sociais
 dfEditado$Curso[40:45] <- str_sub(dfEditado$Curso[40:45], end = 19) #eng. elétrica
+dfEditado$Curso[49] <- str_sub(dfEditado$Curso[49], end = 6) #fisica
+dfEditado$Curso[50:51] <- str_sub(dfEditado$Curso[50:51], end = 9) #geografia
 dfEditado$Curso[54:60] <- str_sub(dfEditado$Curso[54:60], end = 8) #historia
 dfEditado$Curso[62:71] <- str_sub(dfEditado$Curso[62:71], end = 6) #letras
 dfEditado$Curso[76:78] <- str_sub(dfEditado$Curso[76:78], end = 10) #matematica
@@ -55,4 +59,4 @@ dfAgrupado <- add_column(dfAgrupado, Porcentagem.2 = porcentagem.total.2, .after
 
 dfAgrupado[is.na(dfAgrupado)] <- 0.0
 
-write.csv(dfAgrupado, file = "~/Documentos/Analise-de-Dados-da-UFCG/Dados Processados/Taxas de reprovação/Reprovacao2005.csv")
+write_delim(dfAgrupado, "~/Analise-de-Dados-da-UFCG/Dados Processados/Taxas de reprovação/Reprovacao_2005.csv", delim = ";")
