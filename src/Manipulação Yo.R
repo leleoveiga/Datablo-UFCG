@@ -47,12 +47,25 @@ Reprovação_2011[36,1] <- "INTERDISCIPLINAR EM EDUC. DO CAMPO"
 Reprovação_2011[48,1] <- "QUÍMICA"
 Reprovação_2011$Curso <- as.factor(as.character(Reprovação_2011$Curso))
 
-Reprovação_2013$Curso <- as.character(Reprovação_2013$Curso)
-Reprovação_2013[7,1] <- "CIÊNCIAS BIOLÓGICAS"
-Reprovação_2013[33,1] <- "FÍSICA"
-Reprovação_2013[36,1] <- "INTERDISCIPLINAR EM EDUC. DO CAMPO"
-Reprovação_2013[47,1] <- "QUÍMICA"
-Reprovação_2013$Curso <- as.factor(Reprovação_2013$Curso)
+Reprovacao_2013$Curso <- as.character(Reprovacao_2013$Curso)
+Reprovacao_2013$Percentual  <- NULL
+Reprovacao_2013[7,1] <- "CIÊNCIAS BIOLÓGICAS"
+Reprovacao_2013[33,1] <- "FÍSICA"
+Reprovacao_2013[36,1] <- "INTERDISCIPLINAR EM EDUC. DO CAMPO"
+Reprovacao_2013[47,1] <- "QUÍMICA"
+
+Reprovacao_2013 <- Reprovacao_2013 %>% 
+  group_by(Curso) %>% 
+  summarise(Reprovações = sum(Reprovações),
+            Matrículas = sum(Matrículas))
+
+Percentual = round(
+  (Reprovacao_2013$Reprovações / Reprovacao_2013$Matrículas) * 100, digits = 1)
+
+Reprovacao_2013 <- add_column(Reprovacao_2013, Percentual = Percentual, .after = 3)
+Reprovacao_2013 <- as.data.frame(Reprovacao_2013)
+
+Reprovacao_2013$Curso <- as.factor(Reprovacao_2013$Curso)
 
 ####Reorganização####
 
@@ -140,7 +153,7 @@ names(Reprovação_2009)[2:4] <- c("Matrículas.09", "Reprovações.09", "Percen
 names(Reprovação_2010)[2:4] <- c("Matrículas.10", "Reprovações.10", "Percentual.10")
 names(Reprovação_2011)[2:4] <- c("Matrículas.11", "Reprovações.11", "Percentual.11")
 names(Reprovação_2012)[2:4] <- c("Matrículas.12", "Reprovações.12", "Percentual.12")
-names(Reprovação_2013)[2:4] <- c("Matrículas.13", "Reprovações.13", "Percentual.13")
+names(Reprovacao_2013)[2:4] <- c("Matrículas.13", "Reprovações.13", "Percentual.13")
 names(Reprovação_2014)[2:4] <- c("Matrículas.14", "Reprovações.14", "Percentual.14")
 names(Reprovação_2015)[2:4] <- c("Matrículas.15", "Reprovações.15", "Percentual.15")
 names(Reprovação_2016)[2:4] <- c("Matrículas.16", "Reprovações.16", "Percentual.16")
@@ -370,7 +383,7 @@ MegaDF <- full_join(MegaDF, Reprovação_2009, by = "Curso")
 MegaDF <- full_join(MegaDF, Reprovação_2010, by = "Curso")
 MegaDF <- full_join(MegaDF, Reprovação_2011, by = "Curso")
 MegaDF <- full_join(MegaDF, Reprovação_2012, by = "Curso")
-MegaDF <- full_join(MegaDF, Reprovação_2013, by = "Curso")
+MegaDF <- full_join(MegaDF, Reprovacao_2013, by = "Curso")
 MegaDF <- full_join(MegaDF, Reprovação_2014, by = "Curso")
 MegaDF <- full_join(MegaDF, Reprovação_2015, by = "Curso")
 MegaDF <- full_join(MegaDF, Reprovação_2016, by = "Curso")
@@ -378,7 +391,7 @@ MegaDF <- full_join(MegaDF, Reprovação_2017, by = "Curso")
 MegaDF <- full_join(MegaDF, Reprovação_2018, by = "Curso")
 MegaDF <- full_join(MegaDF, Reprovação_2019, by = "Curso")
 
-
+write_delim(MegaDF, "MegaDF.csv", delim = ";")
 
 
 
