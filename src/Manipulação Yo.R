@@ -18,6 +18,10 @@ Reprovacao_2017$X <- NULL
 Reprovacao_2017$X <- NULL
 Reprovacao_2019$X <- NULL
 
+Reprovacao_2002$Curso <- as.character(Reprovacao_2002$Curso)
+Reprovacao_2002$Curso <- as.factor(as.character(Reprovacao_2002$Curso))
+Reprovacao_2002[19,1] <- "GEOGRAFIA"
+
 write_delim(Reprovacao_2002, "Reprovacao_2002.csv", delim = ";")
 write_delim(Reprovacao_2004, "Reprovação_2004.csv", delim = ";")
 write_delim(Reprovacao_2006, "Reprovação_2006.csv", delim = ";")
@@ -77,24 +81,24 @@ Reprovacao_2019$Reprovações.2 <- NULL
 
 ####Adição de Colunas Fator Ano####
 
-Reprovacao_2002 <- add_column(Reprovacao_2002, Ano = 2002, .after = 7)
-Reprovacao_2003 <- add_column(Reprovacao_2003, Ano = 2003, .after = 7)
-Reprovacao_2004 <- add_column(Reprovacao_2004, Ano = 2004, .after = 7)
-Reprovacao_2005 <- add_column(Reprovacao_2005, Ano = 2005, .after = 7)
-Reprovacao_2006 <- add_column(Reprovacao_2006, Ano = 2006, .after = 7)
-Reprovacao_2007 <- add_column(Reprovacao_2007, Ano = 2007, .after = 7)
-Reprovacao_2008 <- add_column(Reprovacao_2008, Ano = 2008, .after = 7)
-Reprovacao_2009 <- add_column(Reprovacao_2009, Ano = 2009, .after = 7)
-Reprovacao_2010 <- add_column(Reprovacao_2010, Ano = 2010, .after = 7)
-Reprovacao_2011 <- add_column(Reprovacao_2011, Ano = 2011, .after = 7)
-Reprovacao_2012 <- add_column(Reprovacao_2012, Ano = 2012, .after = 7)
-Reprovacao_2013 <- add_column(Reprovacao_2013, Ano = 2013, .after = 7)
-Reprovacao_2014 <- add_column(Reprovacao_2014, Ano = 2014, .after = 7)
-Reprovacao_2015 <- add_column(Reprovacao_2015, Ano = 2015, .after = 7)
-Reprovacao_2016 <- add_column(Reprovacao_2016, Ano = 2016, .after = 7)
-Reprovacao_2017 <- add_column(Reprovacao_2017, Ano = 2017, .after = 7)
-Reprovacao_2018 <- add_column(Reprovacao_2018, Ano = 2018, .after = 7)
-Reprovacao_2019 <- add_column(Reprovacao_2019, Ano = 2019, .after = 7)
+Reprovacao_2002$Matrículas <- Reprovacao_2002$Matrículas.02
+Reprovacao_2003$Matrículas <- Reprovacao_2002$Matrículas.03
+Reprovacao_2004$Matrículas <- Reprovacao_2002$Matrículas.04
+Reprovacao_2005$Matrículas <- Reprovacao_2002$Matrículas.05
+Reprovacao_2006$Matrículas <- Reprovacao_2002$Matrículas.06
+Reprovacao_2007$Matrículas <- Reprovacao_2002$Matrículas.07
+Reprovacao_2008$Matrículas <- Reprovacao_2002$Matrículas.08
+Reprovacao_2009$Matrículas <- Reprovacao_2002$Matrículas.09
+Reprovacao_2010$Matrículas <- Reprovacao_2002$Matrículas.10
+Reprovacao_2011$Matrículas <- Reprovacao_2002$Matrículas.11
+Reprovacao_2012$Matrículas <- Reprovacao_2002$Matrículas.12
+Reprovacao_2013$Matrículas <- Reprovacao_2002$Matrículas.13
+Reprovacao_2014$Matrículas <- Reprovacao_2002$Matrículas.14
+Reprovacao_2015$Matrículas <- Reprovacao_2002$Matrículas.15
+Reprovacao_2016$Matrículas <- Reprovacao_2002$Matrículas.16
+Reprovacao_2017$Matrículas <- Reprovacao_2002$Matrículas.17
+Reprovacao_2018$Matrículas <- Reprovacao_2002$Matrículas.18
+Reprovacao_2019$Matrículas <- Reprovacao_2002$Matrículas.19
 
 
 Reprovacao_2002$Ano <- as.factor(as.numeric(Reprovacao_2002$Ano))
@@ -291,10 +295,10 @@ Reprovacao_2019 <- add_column(Reprovacao_2019, Percentual = Percentual, .after =
 
 ####Criando MegaDf####
 
+a <- Reprovacao_2002
+b <- Reprovacao_2003
 
-
-
-
+c <- full_join(a, b, by = "Curso")
 
 
 
