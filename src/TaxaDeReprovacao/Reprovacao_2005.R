@@ -31,6 +31,7 @@ dfEditado$Curso <- str_trim(dfEditado$Curso)
 dfEditado$Curso <- str_replace(dfEditado$Curso, "[\\-]$","")
 dfEditado$Curso <- str_trim(dfEditado$Curso)
 dfEditado$Curso <- str_replace(dfEditado$Curso, "[\\(]+[:alpha:]+[\\)]", "")
+dfEditado$Curso <- str_trim(dfEditado$Curso)
 
 ####Renomeando os cursos pra depois unificar####
 dfEditado$Curso[1:6] <- str_sub(dfEditado$Curso[1:6], end = 13) #administração
