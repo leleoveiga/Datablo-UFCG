@@ -31,16 +31,37 @@ dfFinal = setNames(data.frame(matrix(ncol = 1, nrow = 0)), c("Curso"))
 dfFinal$Curso <- as.character(dfFinal$Curso)
 
 # o for n salva alterações, ver dps
-for (i in listaDf) {
-  i$Matrículas <- i$Matrículas.1 + i$Matrículas.2
-  i$Reprovações <- i$Reprovações.1 + i$Reprovações.2
-  i$Porcentagem <- round((i$Reprovações / i$Matrículas) * 100, digits = 1)
-  i$Matrículas.1 <- NULL
-  i$Matrículas.2 <- NULL
-  i$Reprovações.1 <- NULL
-  i$Reprovações.2 <- NULL
-  i$Porcentagem.1 <- NULL
-  i$Porcentagem.2 <- NULL
-  dfFinal <- full_join(dfFinal, i, by = "Curso" )
+for (i in 1:length(listaDf)) {
+  listaDf[[i]]$Matrículas <- listaDf[[i]]$Matrículas.1 + listaDf[[i]]$Matrículas.2
+  listaDf[[i]]$Reprovações <- listaDf[[i]]$Reprovações.1 + listaDf[[i]]$Reprovações.2
+  listaDf[[i]]$Porcentagem <- round((listaDf[[i]]$Reprovações / listaDf[[i]]$Matrículas) * 100, digits = 1)
+  listaDf[[i]]$Matrículas.1 <- NULL
+  listaDf[[i]]$Matrículas.2 <- NULL
+  listaDf[[i]]$Reprovações.1 <- NULL
+  listaDf[[i]]$Reprovações.2 <- NULL
+  listaDf[[i]]$Porcentagem.1 <- NULL
+  listaDf[[i]]$Porcentagem.2 <- NULL
 }
 
+names(listaDf[[1]])[2:4] <- c("Matrículas.02", "Reprovações.02", "Percentual.02")
+names(listaDf[[2]])[2:4] <- c("Matrículas.03", "Reprovações.03", "Percentual.03")
+names(listaDf[[3]])[2:4] <- c("Matrículas.04", "Reprovações.04", "Percentual.04")
+names(listaDf[[4]])[2:4] <- c("Matrículas.05", "Reprovações.05", "Percentual.05")
+names(listaDf[[5]])[2:4] <- c("Matrículas.06", "Reprovações.06", "Percentual.06")
+names(listaDf[[6]])[2:4] <- c("Matrículas.07", "Reprovações.07", "Percentual.07")
+names(listaDf[[7]])[2:4] <- c("Matrículas.08", "Reprovações.08", "Percentual.08")
+names(listaDf[[8]])[2:4] <- c("Matrículas.09", "Reprovações.09", "Percentual.09")
+names(listaDf[[9]])[2:4] <- c("Matrículas.10", "Reprovações.10", "Percentual.10")
+names(listaDf[[10]])[2:4] <- c("Matrículas.11", "Reprovações.11", "Percentual.11")
+names(listaDf[[11]])[2:4] <- c("Matrículas.12", "Reprovações.12", "Percentual.12")
+names(listaDf[[12]])[2:4] <- c("Matrículas.13", "Reprovações.13", "Percentual.13")
+names(listaDf[[13]])[2:4] <- c("Matrículas.14", "Reprovações.14", "Percentual.14")
+names(listaDf[[14]])[2:4] <- c("Matrículas.15", "Reprovações.15", "Percentual.15")
+names(listaDf[[15]])[2:4] <- c("Matrículas.16", "Reprovações.16", "Percentual.16")
+names(listaDf[[16]])[2:4] <- c("Matrículas.17", "Reprovações.17", "Percentual.17")
+names(listaDf[[17]])[2:4] <- c("Matrículas.18", "Reprovações.18", "Percentual.18")
+names(listaDf[[18]])[2:4] <- c("Matrículas.19", "Reprovações.19", "Percentual.19")
+
+for (i in 1:length(listaDf)){
+  dfFinal <- full_join(dfFinal, listaDf[[i]], by = "Curso" )
+}
