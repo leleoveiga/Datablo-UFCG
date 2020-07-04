@@ -30,6 +30,17 @@ listaDf = list(df2002, df2003, df2004, df2005, df2006, df2007, df2008, df2009,
 dfFinal = setNames(data.frame(matrix(ncol = 1, nrow = 0)), c("Curso"))
 dfFinal$Curso <- as.character(dfFinal$Curso)
 
-for (x in listaDf) {
-  dfFinal <- full_join(dfFinal, x, by = "Curso" )
+# o for n salva alterações, ver dps
+for (i in listaDf) {
+  i$Matrículas <- i$Matrículas.1 + i$Matrículas.2
+  i$Reprovações <- i$Reprovações.1 + i$Reprovações.2
+  i$Porcentagem <- round((i$Reprovações / i$Matrículas) * 100, digits = 1)
+  i$Matrículas.1 <- NULL
+  i$Matrículas.2 <- NULL
+  i$Reprovações.1 <- NULL
+  i$Reprovações.2 <- NULL
+  i$Porcentagem.1 <- NULL
+  i$Porcentagem.2 <- NULL
+  dfFinal <- full_join(dfFinal, i, by = "Curso" )
 }
+
