@@ -7,8 +7,8 @@ library(purrr)
 library(tibble)
 library(readr)
 
-dfPadrao <- read.csv(file = "~/Analise-de-Dados-da-UFCG/Dados Crus/Taxas de Reprovação/taxaReprovacaoAnoPorCurso2011.csv", encoding = "UTF-8")
-dfEditado <- read.csv(file = "~/Analise-de-Dados-da-UFCG/Dados Crus/Taxas de Reprovação/taxaReprovacaoAnoPorCurso2011.csv", encoding = "UTF-8")
+dfPadrao <- read.csv(file = "~/Analise-de-Dados-da-UFCG/Dados Crus/TaxaDeReprovacao/taxaReprovacaoAnoPorCurso2011.csv", encoding = "UTF-8")
+dfEditado <- read.csv(file = "~/Analise-de-Dados-da-UFCG/Dados Crus/TaxaDeReprovacao/taxaReprovacaoAnoPorCurso2011.csv", encoding = "UTF-8")
 
 ####Limpeza e organização básica do dataframe####
 names(dfEditado)[1:7] <- c("Curso", "Reprovações.1", "Matrículas.1", "Porcentagem.1"
@@ -41,7 +41,7 @@ dfEditado$Curso[64:65] <- str_sub(dfEditado$Curso[64:65], end = 9) #filosofia
 dfEditado$Curso[66:70] <- str_sub(dfEditado$Curso[66:70], end = 6) #física
 dfEditado$Curso[71:74] <- str_sub(dfEditado$Curso[71:74], end = 9) #geografia
 dfEditado$Curso[77:83] <- str_sub(dfEditado$Curso[77:83], end = 8) #historia
-dfEditado$Curso[86:105] <- str_sub(dfEditado$Curso[86:105], end = 6) #letras
+dfEditado$Curso[85:105] <- str_sub(dfEditado$Curso[85:105], end = 6) #letras
 dfEditado$Curso[107:112] <- str_sub(dfEditado$Curso[107:112], end = 10) #matematica
 dfEditado$Curso[118:119] <- str_sub(dfEditado$Curso[118:119], end = 6) #musica
 dfEditado$Curso[123:126] <- str_sub(dfEditado$Curso[123:126], end = 9) #pedagogia
@@ -61,5 +61,5 @@ dfAgrupado <- add_column(dfAgrupado, Porcentagem.2 = porcentagem.total.2, .after
 
 dfAgrupado[is.na(dfAgrupado)] <- 0.0
 
-write_delim(dfAgrupado, "~/Analise-de-Dados-da-UFCG/Dados Processados/Taxas de reprovação/Reprovação_2011.csv", delim = ";")
+write_delim(dfAgrupado, "~/Analise-de-Dados-da-UFCG/Dados Processados/TaxaDeReprovacao/Reprovacao_2011.csv", delim = ";")
 
