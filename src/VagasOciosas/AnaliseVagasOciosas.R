@@ -8,7 +8,7 @@ library(purrr)
 #           Compilar mesmos cursos em uma linha única
 #OBJ: Gráfico de barras, mostrando a quantidade de vagas ociosas por curso
 
-vagasOciosasPorCurso <- read.csv(file = '~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/vagasOciosasPorCurso.csv')
+vagasOciosasPorCurso <- read.delim(file = '~/Analise-de-Dados-da-UFCG/DadosCrus/VagasOciosas/vagasOciosasPorCurso.csv', encoding = "UTF-8", sep = ",")
 
 #Correção dos Títulos das Colunas:
 names(vagasOciosasPorCurso)[1:10] <- c("Código","Curso","Campus","Alunos Ativos","Vaga 1 Sem","Vaga 2 Sem","Área","Duração Padrão","Fator de Retenção","Vagas Ociosas")
@@ -21,14 +21,10 @@ data.edit1$Código <- NULL
 data.edit1$`Duração Padrão` <- NULL 
 data.edit1$Área <- NULL 
 data.edit1$`Fator de Retenção` <- NULL 
-data.edit1$`Alunos Ativos` <- as.numeric(
-  levels(data.edit1$`Alunos Ativos`))[data.edit1$`Alunos Ativos`]
-data.edit1$`Vaga 1 Sem` <- as.numeric(
-  levels(data.edit1$`Vaga 1 Sem`))[data.edit1$`Vaga 1 Sem`] 
-data.edit1$`Vaga 2 Sem` <- as.numeric(
-  levels(data.edit1$`Vaga 2 Sem`))[data.edit1$`Vaga 2 Sem`] 
-data.edit1$`Vagas Ociosas` <- as.numeric(
-  levels(data.edit1$`Vagas Ociosas`))[data.edit1$`Vagas Ociosas`] 
+data.edit1$`Alunos Ativos` <- as.numeric(data.edit1$`Alunos Ativos`)
+data.edit1$`Vaga 1 Sem` <- as.numeric(data.edit1$`Vaga 1 Sem`)
+data.edit1$`Vaga 2 Sem` <- as.numeric(data.edit1$`Vaga 2 Sem`)
+data.edit1$`Vagas Ociosas` <- as.numeric(data.edit1$`Vagas Ociosas`)
 
 #Fundindo Linhas
 data.edit1 <- data.edit1[c(-1,-47,-95,-2),] #excluindo linhas vazias
@@ -111,7 +107,7 @@ ggplot(data = Final.Total,
                      y = `Vagas Ociosas`,
                      size = `Alunos Ativos`,
                      colour = Curso)) +
-  scale_size_continuous(range = c(1,15)) +
+  scale_size_continuous(range = c(1,20)) +
   xlab("Vagas de Ingressantes(1º e 2º Semestre)") +
   ylab("Vagas Ociosas") +
   geom_point()
@@ -133,7 +129,7 @@ ggplot(data = Final.Total,
   xlab("Vagas Ociosas / Alunos Ativos") +
   ylab("Curso") +
   ggtitle("Cursos - UFCG")
-#### gráfico com cores representando dados e muito mais####
+#### todos os conhecimentos juntos e com tema escuro ####
 ggplot(data = Final.Total,
        mapping = aes(fill = `Vagas Ociosas`, x = `Alunos Ativos`,
                      y = reorder(Curso, -`Alunos Ativos`), label = `Alunos Ativos`)) +
@@ -141,25 +137,27 @@ ggplot(data = Final.Total,
   scale_fill_viridis_c(option = "cividis") + #uma palheta de cores personalizada
   theme(
     plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
-    plot.background = element_rect(fill="gray20"),
-    panel.background = element_rect(fill="gray20"),
-    panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"),
-    panel.grid.major = element_line(colour ="gray30"),
-    panel.grid.minor = element_blank(),
-    #axis.line = element_blank(),
-    #axis.ticks = element_blank(), 
-    axis.text = element_text(color="white"), #cor do texto dos eixos
-    axis.text.y  = element_text(hjust=1),
-    legend.text = element_text(color="white", size=rel(1)),
-    legend.background = element_rect(fill="gray20"),
+    plot.background = element_rect(fill="gray20"), #cor da parte externa do fundo
+    panel.background = element_rect(fill="gray20"), #cor da parte interna do fundo
+    # # panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"), #preencher NAs com outras coisas
+    panel.grid.major = element_line(colour ="gray30"), #grade maior
+    panel.grid.minor = element_blank(), #grade menor
+    axis.line = element_blank(), #nao sei
+    axis.ticks = element_line(color="gray75"), #cor dos marcadores dos eixos
+    axis.text = element_text(color="gray75"), #cor do texto dos eixos
+    axis.title = element_text(color="white"), #cor do titulo dos eixos
+    # axis.text.y  = element_text(hjust=1), #posicao do texto do eixo y
+    legend.text = element_text(color="gray75", size=rel(1)), #cor do texto da legenda secundaria
+    legend.background = element_rect(fill="gray20"), #cor do fundo da legenda secundaria
     # legend.position = "bottom", #posicao do preenchimento
-    legend.title= element_text(color="white") #legenda das cores
+    legend.title= element_text(color="gray75") #cor do titulo do preenchimento
   ) +
-  geom_text(size = rel(4), hjust = -0.5, color = "white") +
-  coord_cartesian(xlim = c(50, 1000)) +
-  xlab("Vagas Ociosas / Alunos Ativos") +
-  ylab("Curso") +
-  ggtitle("Cursos - UFCG")
+  geom_text(size = rel(4), hjust = -0.5, color = "gray75") + #texto nas barras
+  coord_cartesian(xlim = c(48, 1000), ylim = c(1.1, 61)) + #corrigir gap das barras
+  xlab("Alunos Ativos") +
+  ylab("Cursos") +
+  ggtitle("Alunos ativos x curso.")
+
 #### Gráfico com gap consertado ####
 ggplot(data = Final.Total,
        mapping = aes(x = `Alunos Ativos`,
