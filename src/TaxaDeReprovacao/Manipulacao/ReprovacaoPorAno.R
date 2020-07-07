@@ -26,7 +26,11 @@ listaDf = list(df2002, df2003, df2004, df2005, df2006, df2007, df2008, df2009,
 dfFinal = setNames(data.frame(matrix(ncol = 1, nrow = 0)), c("Curso"))
 dfFinal$Curso <- as.character(dfFinal$Curso)
 
-anos = c("02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19")
+anos = c("02", "03", "04", "05", "06",
+         "07", "08", "09", "10", "11",
+         "12", "13", "14", "15", "16",
+         "17", "18", "19")
+
 reprovacoes <- paste0('', anos)
 
 for (i in 1:length(listaDf)){
@@ -62,30 +66,30 @@ ggplot(data = Final.Total,
        mapping = aes(fill = `Vagas Ociosas`, x = `Alunos Ativos`,
                      y = reorder(Curso, -`Alunos Ativos`),
                      label = `Alunos Ativos`)) +
-geom_col() +
-scale_fill_viridis_c(option = "cividis") + #uma palheta de cores personalizada
-theme(
-  plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
-  plot.background = element_rect(fill="gray20"), #cor da parte externa do fundo
-  panel.background = element_rect(fill="gray20"), #cor da parte interna do fundo
-  # # panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"), #preencher NAs com outras coisas
-  panel.grid.major = element_line(colour ="gray30"), #grade maior
-  panel.grid.minor = element_blank(), #grade menor
-  axis.line = element_blank(), #nao sei
-  axis.ticks = element_line(color="gray75"), #cor dos marcadores dos eixos
-  axis.text = element_text(color="gray75"), #cor do texto dos eixos
-  axis.title = element_text(color="white"), #cor do titulo dos eixos
-  # axis.text.y  = element_text(hjust=1), #posicao do texto do eixo y
-  legend.text = element_text(color="gray75", size=rel(1)), #cor do texto da legenda secundaria
-  legend.background = element_rect(fill="gray20"), #cor do fundo da legenda secundaria
-  # legend.position = "bottom", #posicao do preenchimento
-  legend.title= element_text(color="gray75") #cor do titulo do preenchimento
-) +
-geom_text(size = rel(4), hjust = -0.5, color = "gray75") + #texto nas barras
-coord_cartesian(xlim = c(48, 1000), ylim = c(1.1, 61)) + #corrigir gap das barras
-xlab("Alunos Ativos") +
-ylab("Cursos") +
-ggtitle("Alunos ativos x curso.")
+  geom_col() +
+  scale_fill_viridis_c(option = "cividis") + #uma palheta de cores personalizada
+  theme(
+    plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
+    plot.background = element_rect(fill="gray20"), #cor da parte externa do fundo
+    panel.background = element_rect(fill="gray20"), #cor da parte interna do fundo
+    # # panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"), #preencher NAs com outras coisas
+    panel.grid.major = element_line(colour ="gray30"), #grade maior
+    panel.grid.minor = element_blank(), #grade menor
+    axis.line = element_blank(), #nao sei
+    axis.ticks = element_line(color="gray75"), #cor dos marcadores dos eixos
+    axis.text = element_text(color="gray75"), #cor do texto dos eixos
+    axis.title = element_text(color="white"), #cor do titulo dos eixos
+    # axis.text.y  = element_text(hjust=1), #posicao do texto do eixo y
+    legend.text = element_text(color="gray75", size=rel(1)), #cor do texto da legenda secundaria
+    legend.background = element_rect(fill="gray20"), #cor do fundo da legenda secundaria
+    # legend.position = "bottom", #posicao do preenchimento
+    legend.title= element_text(color="gray75") #cor do titulo do preenchimento
+  ) +
+  geom_text(size = rel(4), hjust = -0.5, color = "gray75") + #texto nas barras
+  coord_cartesian(xlim = c(48, 1000), ylim = c(1.1, 61)) + #corrigir gap das barras
+  xlab("Alunos Ativos") +
+  ylab("Cursos") +
+  ggtitle("Alunos ativos x curso.")
 
 ggplot(dfFinal, aes(x=dfFinal[2:19], y=Curso, group=Curso)) +
   geom_line(aes(linetype=Curso))+

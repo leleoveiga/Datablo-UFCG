@@ -4,6 +4,7 @@ library(stringr)
 library(readr)
 library(ggplot2)
 library(tibble)
+library(purrr)
 
 
 ####Consertando a CAGADA de LEO####
@@ -168,3 +169,99 @@ for (i in 1:length(listaDf)) {
 }
 
 write_delim(MegaDF, "MegaDF.csv", delim = ";")
+
+####Plots Engenharias####
+  #Preparando DFs finos
+
+#Engenharias
+engenharias <- MegaDF[c(10:17, 30, 34:35, 37:39),] #Criando um DF com dados das engenharias
+engenharias <- arrange(engenharias) 
+
+n = 2
+engenhariasmat <- engenharias[[1]][1:14] 
+engenhariasmat <- as.data.frame(engenhariasmat)
+
+while (n <= 55){ #Percorre o DF e salva apenas as colunas de matrículas
+  engenhariasmat <- add_column(
+    engenhariasmat, matrículas = engenharias[[n]][1:14])
+  n = n + 3
+}
+
+colnames(engenhariasmat) <- paste0("", 2001:2019)
+names(engenhariasmat)[1] <- "Curso"
+
+
+n = 3
+engenhariasrep <- engenharias[[1]][1:14] 
+engenhariasrep <- as.data.frame(engenhariasrep)
+
+while (n <= 55){ #Percorre o DF e salva apenas as colunas de matrículas
+  engenhariasrep <- add_column(
+    engenhariasrep, matrículas = engenharias[[n]][1:14])
+  n = n + 3
+}
+
+colnames(engenhariasrep) <- paste0("", 2001:2019)
+names(engenhariasrep)[1] <- "Curso"
+
+
+n = 4
+engenhariasper <- engenharias[[1]][1:14] 
+engenhariasper <- as.data.frame(engenhariasper)
+
+while (n <= 55){ #Percorre o DF e salva apenas as colunas de matrículas
+  engenhariasper <- add_column(
+    engenhariasper, matrículas = engenharias[[n]][1:14])
+  n = n + 3
+}
+
+colnames(engenhariasper) <- paste0("", 2001:2019)
+names(engenhariasper)[1] <- "Curso"
+
+c <- as.vector(engenharias$Curso)
+a <- c(2002:2019)
+
+engenhariasmat <- as.data.frame(t(engenhariasmat))
+engenhariasmat <- engenhariasmat[-1,]
+names(engenhariasmat) <- c
+engenhariasmat <- add_column(engenhariasmat, Ano = a, .after = 0)
+
+
+engenhariasrep <- as.data.frame(t(engenhariasrep))
+engenhariasrep <- engenhariasrep[-1,]
+names(engenhariasrep) <- c
+
+
+engenhariasper <- as.data.frame(t(engenhariasper))
+engenhariasper <- engenhariasper[-1,]
+names(engenhariasper) <- c
+
+n <- 5
+a <- 2
+while (n <= 55){
+  a <- c(a, n)
+  n <- n + 3
+}
+
+test2 <- melt(engenhariasmat, id.vars="Curso")
+
+test2 <- names(c())
+
+ggplot(data = test2,
+       mapping = aes(x = variable,
+                     y = value,
+                     group = Curso,
+                     col = Curso)) +
+  geom_line() + 
+  geom_point()
+
+
+
+df <- read.delim(
+  file = "~/Documentos/Analise-de-Dados-da-UFCG/DadosProcessados/TaxaDeReprovacao/Manipulacao/dfCompleto/compiladoPorAno.csv",
+  encoding = "UTF-8", sep = ";")
+
+####Criação DF de área de conhecimento####
+
+
+
