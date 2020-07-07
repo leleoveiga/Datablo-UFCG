@@ -243,23 +243,44 @@ while (n <= 55){
   n <- n + 3
 }
 
-test2 <- melt(engenhariasmat, id.vars="Curso")
+engmat <- melt(engenhariasmat, id.vars="Curso")
+engrep <- melt(engenhariasrep, id.vars = "Curso")
+engper <- melt(engenhariasper, id.vars = "Curso")
 
-test2 <- names(c())
 
-ggplot(data = test2,
-       mapping = aes(x = variable,
-                     y = value,
+names(engmat)[2:3] <- c("Ano", "Matrículas")
+names(engrep)[2:3] <- c('Ano', 'Reprovações')
+names(engper)[2:3] <- c('Ano', 'Percentual')
+
+ggplot(data = engmat,
+       mapping = aes(x = Ano,
+                     y = Matrículas,
                      group = Curso,
-                     col = Curso)) +
+                     col = Curso,
+                     label = )) +
   geom_line() + 
   geom_point()
+
+ggplot(data = engrep,
+       mapping = aes(x = Ano,
+                     y = Reprovações,
+                     group = Curso,
+                     Col = Curso,
+                     label = Reprovações)) +
+  geom_text(hjust = -0.5, size = rel(4), color = "darkblue") +
+  geom_line() +
+  geom_point() +
+  xlab('Ano') +
+  ylab('Reprovações') +
+  ggtitle('Número de Reprovações Anuais Nos Cursos de Engenharia - UFCG')
+
 
 
 
 df <- read.delim(
   file = "~/Documentos/Analise-de-Dados-da-UFCG/DadosProcessados/TaxaDeReprovacao/Manipulacao/dfCompleto/compiladoPorAno.csv",
   encoding = "UTF-8", sep = ";")
+
 
 ####Criação DF de área de conhecimento####
 
