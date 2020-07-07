@@ -10,7 +10,7 @@ for (i in 2:55){
   }
 }
 for (i in 2:55){
-  if (str_sub(names(df[i]), end=1) == "P" ) {
+  if (str_sub(names(df[i]), end=1) == "R" ) {
     df[i] = NULL
   }
 }
@@ -19,10 +19,10 @@ for (i in 2:55){
 names(df)[2:19] = c("02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19")
 df1 <- melt(df, id.vars="Curso")
 df2 <- df
-names(df1)[2:3] <- c("Ano","Reprovações") 
+names(df1)[2:3] <- c("Ano","Percentual") 
 
 #### Primeiro plot ####
-ggplot(df1, aes(x=Ano, y=Reprovações, col=Curso, group=Curso, label=Reprovações)) +
+ggplot(df1, aes(x=Ano, y=Percentual, col=Curso, group=Curso, label=Percentual)) +
   geom_line()+
   geom_point() +
   scale_fill_viridis_c(option = "cividis") + #uma palheta de cores personalizada
@@ -44,7 +44,7 @@ ggplot(df1, aes(x=Ano, y=Reprovações, col=Curso, group=Curso, label=Reprovaç�
     legend.title= element_text(color="gray75") #cor do titulo do preenchimento
   ) +
   geom_text(size = rel(4), hjust = -0.5, color = "gray75") + #texto nas barras
-  coord_cartesian(xlim = c(0, 18.5), ylim = c(20, 1650)) + #corrigir gap das barras
-xlab("Anos") +
+  coord_cartesian(xlim = c(0, 18.5), ylim = c(1, 40)) + #corrigir gap das barras
+  xlab("Anos") +
   ylab("Reprovações(Cadeiras)") +
   ggtitle("Reprovações(Cadeiras) x Ano.")

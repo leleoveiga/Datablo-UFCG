@@ -7,8 +7,8 @@ library(purrr)
 library(tibble)
 library(readr)
 
-dfPadrao <- read.csv(file = "~/Analise-de-Dados-da-UFCG/Dados Crus/Taxas de Reprovação/taxaReprovacaoAnoPorCurso2007.csv", encoding = "UTF-8")
-dfEditado <- read.csv(file = "~/Analise-de-Dados-da-UFCG/Dados Crus/Taxas de Reprovação/taxaReprovacaoAnoPorCurso2007.csv", encoding = "UTF-8")
+dfPadrao <- read.csv(file = "~/Analise-de-Dados-da-UFCG/DadosCrus/TaxadeReprovacao/taxaReprovacaoAnoPorCurso2007.csv", encoding = "UTF-8")
+dfEditado <- read.csv(file = "~/Analise-de-Dados-da-UFCG/DadosCrus/TaxadeReprovacao/taxaReprovacaoAnoPorCurso2007.csv", encoding = "UTF-8")
 
 ####Limpeza e organização básica do dataframe####
 names(dfEditado)[1:7] <- c("Curso", "Reprovações.1", "Matrículas.1", "Porcentagem.1"
@@ -47,8 +47,8 @@ dfEditado$Curso[95:107] <- str_sub(dfEditado$Curso[95:107], end = 9) #pedagogia
 ####Juntar os dados por agrupamento dos cursos####
 dfAgrupado <- dfEditado %>%
   group_by(Curso) %>% 
-  summarise(Reprovações.1 = sum(Reprovações.1), Matrículas.1 = sum(Matrículas.1)
-            , Reprovações.2 = sum(Reprovações.2), Matrículas.2 = sum(Matrículas.2))
+  summarise(Reprovações.1 = sum(Reprovações.1), Matrículas.1 = sum(Matrículas.1),
+            Reprovações.2 = sum(Reprovações.2), Matrículas.2 = sum(Matrículas.2))
 dfAgrupado <- as.data.frame(dfAgrupado)
 
 ####Criando a coluna de porcentagem baseada no total####

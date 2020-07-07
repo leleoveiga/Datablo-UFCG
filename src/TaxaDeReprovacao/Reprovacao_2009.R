@@ -7,8 +7,8 @@ library(purrr)
 library(tibble)
 library(readr)
 
-dfPadrao <- read.csv(file = "~/Analise-de-Dados-da-UFCG/Dados Crus/Taxas de Reprovação/taxaReprovacaoAnoPorCurso2009.csv", encoding = "UTF-8")
-dfEditado <- read.csv(file = "~/Analise-de-Dados-da-UFCG/Dados Crus/Taxas de Reprovação/taxaReprovacaoAnoPorCurso2009.csv", encoding = "UTF-8")
+dfPadrao <- read.csv(file = "~/Analise-de-Dados-da-UFCG/DadosCrus/TaxadeReprovacao/taxaReprovacaoAnoPorCurso2009.csv", encoding = "UTF-8")
+dfEditado <- read.csv(file = "~/Analise-de-Dados-da-UFCG/DadosCrus/TaxadeReprovacao/taxaReprovacaoAnoPorCurso2009.csv", encoding = "UTF-8")
 
 ####Limpeza e organização básica do dataframe####
 names(dfEditado)[1:7] <- c("Curso", "Reprovações.1", "Matrículas.1", "Porcentagem.1"
