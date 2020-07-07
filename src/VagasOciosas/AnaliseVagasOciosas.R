@@ -132,8 +132,9 @@ ggplot(data = Final.Total,
 #### todos os conhecimentos juntos e com tema escuro ####
 ggplot(data = Final.Total,
        mapping = aes(fill = `Vagas Ociosas`, x = `Alunos Ativos`,
-                     y = reorder(Curso, -`Alunos Ativos`), label = `Alunos Ativos`)) +
-  geom_bar(stat = "identity") +
+                     y = reorder(Curso, -`Alunos Ativos`),
+                     label = `Alunos Ativos`)) +
+  geom_col() +
   scale_fill_viridis_c(option = "cividis") + #uma palheta de cores personalizada
   theme(
     plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),

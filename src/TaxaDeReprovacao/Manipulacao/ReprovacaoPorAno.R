@@ -46,3 +46,35 @@ for (i in 1:length(listaDf)){
 }
 
 write_delim(dfFinal, "~/Analise-de-Dados-da-UFCG/DadosProcessados/TaxaDeReprovacao/Manipulacao/dfCompleto/reprovacaoPorAno.csv", delim = ";")
+
+colunas = colnames(dfFinal)
+
+ggplot(dfFinal, aes(x=dfFinal[2:19], y=Curso, group=Curso)) +
+  geom_line(aes(linetype=Curso))+
+  geom_point() +
+# ggplot(data = dfFinal,
+#        mapping = aes(x = Curso, y = dfFinal[1:19])) +
+  # geom_line(fill = "#ff4400") +
+  # scale_fill_viridis_c(option = "cividis") + #uma palheta de cores personalizada
+  # theme(
+  #   plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
+  #   plot.background = element_rect(fill="gray20"), #cor da parte externa do fundo
+  #   panel.background = element_rect(fill="gray20"), #cor da parte interna do fundo
+  #   # # panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"), #preencher NAs com outras coisas
+  #   panel.grid.major = element_line(colour ="gray30"), #grade maior
+  #   panel.grid.minor = element_blank(), #grade menor
+  #   axis.line = element_blank(), #nao sei
+  #   axis.ticks = element_line(color="gray75"), #cor dos marcadores dos eixos
+  #   axis.text = element_text(color="gray75"), #cor do texto dos eixos
+  #   axis.title = element_text(color="white"), #cor do titulo dos eixos
+  #   # axis.text.y  = element_text(hjust=1), #posicao do texto do eixo y
+  #   legend.text = element_text(color="gray75", size=rel(1)), #cor do texto da legenda secundaria
+  #   legend.background = element_rect(fill="gray20"), #cor do fundo da legenda secundaria
+  #   # legend.position = "bottom", #posicao do preenchimento
+  #   legend.title= element_text(color="gray75") #cor do titulo do preenchimento
+  # ) +
+  # geom_text(size = rel(4), hjust = -0.5, color = "gray75") + #texto nas barras
+  # coord_cartesian(xlim = c(48, 1000), ylim = c(1.1, 61)) + #corrigir gap das barras
+  xlab("Anos") +
+  ylab("Reprovações") +
+  ggtitle("Alunos ativos x curso.")
