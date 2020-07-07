@@ -1,10 +1,6 @@
-library(dplyr)
-library(tidyr)
-library(stringr)
-library(readr)
-library(ggplot2)
-library(tibble)
-
+library(tidyverse)
+library(reshape2)
+library(GGally)
 df2002 <- read.delim(file = "~/Analise-de-Dados-da-UFCG/DadosProcessados/TaxaDeReprovacao/Reprovacao_2002.csv", encoding = "UTF-8", sep = ";")
 df2003 <- read.delim(file = "~/Analise-de-Dados-da-UFCG/DadosProcessados/TaxaDeReprovacao/Reprovacao_2003.csv", encoding = "UTF-8", sep = ";")
 df2004 <- read.delim(file = "~/Analise-de-Dados-da-UFCG/DadosProcessados/TaxaDeReprovacao/Reprovacao_2004.csv", encoding = "UTF-8", sep = ";")
@@ -31,7 +27,7 @@ dfFinal = setNames(data.frame(matrix(ncol = 1, nrow = 0)), c("Curso"))
 dfFinal$Curso <- as.character(dfFinal$Curso)
 
 anos = c("02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19")
-reprovacoes <- paste0('Reprovações.', anos)
+reprovacoes <- paste0('', anos)
 
 for (i in 1:length(listaDf)){
   listaDf[[i]]$Reprovações <- listaDf[[i]]$Reprovações.1 + listaDf[[i]]$Reprovações.2
@@ -45,9 +41,51 @@ for (i in 1:length(listaDf)){
   dfFinal <- full_join(dfFinal, listaDf[[i]], by = "Curso" )  
 }
 
-write_delim(dfFinal, "~/Analise-de-Dados-da-UFCG/DadosProcessados/TaxaDeReprovacao/Manipulacao/dfCompleto/reprovacaoPorAno.csv", delim = ";")
+#write_delim(dfFinal, "~/Analise-de-Dados-da-UFCG/DadosProcessados/TaxaDeReprovacao/Manipulacao/dfCompleto/reprovacaoPorAno.csv", delim = ";")
 
-colunas = colnames(dfFinal)
+df1 <- melt(dfFinal, id.vars="Curso")
+df2 <- dfFinal
+names(df1)[2:3] <- c("Ano","Reprovações") 
+
+#### Primeiro plot ####
+ggplot(df1, aes(x=Ano, y=Reprovações, col=Curso, group = Curso)) + 
+  geom_line() + 
+  geom_point()
+
+#### Testar esse tipo de plot dps ####
+ggparcoord(df2,
+           columns = 2:19, groupColumn = 1
+) 
+
+
+ggplot(data = Final.Total,
+       mapping = aes(fill = `Vagas Ociosas`, x = `Alunos Ativos`,
+                     y = reorder(Curso, -`Alunos Ativos`),
+                     label = `Alunos Ativos`)) +
+geom_col() +
+scale_fill_viridis_c(option = "cividis") + #uma palheta de cores personalizada
+theme(
+  plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
+  plot.background = element_rect(fill="gray20"), #cor da parte externa do fundo
+  panel.background = element_rect(fill="gray20"), #cor da parte interna do fundo
+  # # panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"), #preencher NAs com outras coisas
+  panel.grid.major = element_line(colour ="gray30"), #grade maior
+  panel.grid.minor = element_blank(), #grade menor
+  axis.line = element_blank(), #nao sei
+  axis.ticks = element_line(color="gray75"), #cor dos marcadores dos eixos
+  axis.text = element_text(color="gray75"), #cor do texto dos eixos
+  axis.title = element_text(color="white"), #cor do titulo dos eixos
+  # axis.text.y  = element_text(hjust=1), #posicao do texto do eixo y
+  legend.text = element_text(color="gray75", size=rel(1)), #cor do texto da legenda secundaria
+  legend.background = element_rect(fill="gray20"), #cor do fundo da legenda secundaria
+  # legend.position = "bottom", #posicao do preenchimento
+  legend.title= element_text(color="gray75") #cor do titulo do preenchimento
+) +
+geom_text(size = rel(4), hjust = -0.5, color = "gray75") + #texto nas barras
+coord_cartesian(xlim = c(48, 1000), ylim = c(1.1, 61)) + #corrigir gap das barras
+xlab("Alunos Ativos") +
+ylab("Cursos") +
+ggtitle("Alunos ativos x curso.")
 
 ggplot(dfFinal, aes(x=dfFinal[2:19], y=Curso, group=Curso)) +
   geom_line(aes(linetype=Curso))+
