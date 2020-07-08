@@ -20,6 +20,15 @@ names(df)[2:19] = c("02", "03", "04", "05", "06", "07", "08", "09", "10", "11", 
 df1 <- melt(df, id.vars="Curso")
 df2 <- df
 names(df1)[2:3] <- c("Ano","Reprovações") 
+dfArea = df
+
+#humanas
+#1,46, 2, 28, 5, 6, 47, 7, 8, 9, 40, 19, 20, 41, 21, 42, 43, 26, 49, 50, 52
+#exatas
+#33, 3, 10, 34, 35, 12, 13, 39, 30, 14, 15, 17, 48, 18, 22, 25, 32, 51, 27
+#biológicas
+#4, 31, 29, 37, ?38, 36, 23, 24, 44, 45
+
 
 #### Primeiro plot ####
 ggplot(df1, aes(x=Ano, y=Reprovações, col=Curso, group=Curso, label=Reprovações)) +
@@ -45,6 +54,8 @@ ggplot(df1, aes(x=Ano, y=Reprovações, col=Curso, group=Curso, label=Reprovaç�
   ) +
   geom_text(size = rel(4), hjust = -0.5, color = "gray75") + #texto nas barras
   coord_cartesian(xlim = c(0, 18.5), ylim = c(20, 1650)) + #corrigir gap das barras
-xlab("Anos") +
+  xlab("Anos") +
   ylab("Reprovações(Cadeiras)") +
   ggtitle("Reprovações(Cadeiras) x Ano.")
+
+

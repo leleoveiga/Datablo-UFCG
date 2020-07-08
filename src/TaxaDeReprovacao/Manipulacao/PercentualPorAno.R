@@ -46,5 +46,5 @@ ggplot(df1, aes(x=Ano, y=Percentual, col=Curso, group=Curso, label=Percentual)) 
   geom_text(size = rel(4), hjust = -0.5, color = "gray75") + #texto nas barras
   coord_cartesian(xlim = c(0, 18.5), ylim = c(1, 40)) + #corrigir gap das barras
   xlab("Anos") +
-  ylab("Reprovações(Cadeiras)") +
-  ggtitle("Reprovações(Cadeiras) x Ano.")
+  ylab("Percentual") +
+  ggtitle("Percentual de Reprovação x Ano.")
