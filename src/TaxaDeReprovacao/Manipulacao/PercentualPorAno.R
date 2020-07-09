@@ -21,6 +21,13 @@ df1 <- melt(df, id.vars="Curso")
 df2 <- df
 names(df1)[2:3] <- c("Ano","Percentual") 
 
+#humanas
+#1,46, 2, 28, 5, 6, 47, 7, 8, 9, 40, 19, 20, 41, 21, 42, 43, 26, 49, 50, 52
+#exatas
+#33, 3, 10, 34, 35, 12, 13, 39, 30, 14, 15, 17, 48, 18, 22, 25, 32, 51, 27
+#biológicas
+#4, 31, 29, 37, ?38, 36, 23, 24, 44, 45
+
 #### Primeiro plot ####
 ggplot(df1, aes(x=Ano, y=Percentual, col=Curso, group=Curso, label=Percentual)) +
   geom_line()+
