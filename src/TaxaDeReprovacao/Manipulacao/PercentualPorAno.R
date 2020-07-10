@@ -1,6 +1,5 @@
 library(tidyverse)
 library(reshape2)
-library(GGally)
 library(viridis)
 library(directlabels)
 
@@ -73,12 +72,12 @@ ggplot(dfHumanas1, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Cur
     
   ) +
   geom_dl(aes(label = Curso),
-          method = list(list(dl.trans(x = x + 0.15), cex = 0.6, "last.points"))) + #label no final de cada linha
+          method = list(list(dl.trans(x = x + 0.15), cex = 0.7, "last.points"))) + #label no final de cada linha
   coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 35)) + #corrigir gap das barras
   # geom_text(data = dfHumanas1 %>% filter(Ano == last(Ano)), hjust = -0.1)                   
   xlab("Anos") +
   ylab("Percentual") +
-  ggtitle("Taxa de Reprovação (em %) Anuas Nos Cursos de Ciências Humanas(1/2) - UFCG")
+  ggtitle("Taxa de Reprovação (em %) Anuais Nos Cursos de Ciências Humanas(1/2) - UFCG")
 
 ggplot(dfHumanas2, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Percentual)) +
   geom_line(size=1)+
@@ -104,11 +103,11 @@ ggplot(dfHumanas2, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Per
     legend.key = element_rect(fill="black")
   ) +
   geom_dl(aes(label = Curso),
-          method = list(list(dl.trans(x = x + 0.15), cex = 0.6, "last.points"))) + #label no final de cada linha
+          method = list(list(dl.trans(x = x + 0.15), cex = 0.7, "last.points"))) + #label no final de cada linha
   coord_cartesian(xlim = c(1.6, 12.5), ylim = c(0.5, 35)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
-  ggtitle("Taxa de Reprovação (em %) Anuas Nos Cursos de Ciências Humanas(2/2) - UFCG")
+  ggtitle("Taxa de Reprovação (em %) Anuais Nos Cursos de Ciências Humanas(2/2) - UFCG")
 
 ggplot(dfExatas1, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Percentual)) +
   geom_line(size=1)+
@@ -134,11 +133,11 @@ ggplot(dfExatas1, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Perc
     legend.key = element_rect(fill="black")
   ) +
   geom_dl(aes(label = Curso),
-          method = list(list(dl.trans(x = x + 0.15), cex = 0.6, "last.points"))) + #label no final de cada linha
+          method = list(list(dl.trans(x = x + 0.15), cex = 0.7, "last.points"))) + #label no final de cada linha
   coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 39)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
-  ggtitle("Taxa de Reprovação (em %) Anuas Nos Cursos de Ciências Exatas(1/2) - UFCG")
+  ggtitle("Taxa de Reprovação (em %) Anuais Nos Cursos de Ciências Exatas(1/2) - UFCG")
 
 ggplot(dfExatas2, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Percentual)) +
   geom_line(size=1)+
@@ -164,11 +163,11 @@ ggplot(dfExatas2, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Perc
     legend.key = element_rect(fill="black")
   ) +
   geom_dl(aes(label = Curso),
-          method = list(list(dl.trans(x = x + 0.15), cex = 0.6, "last.points"))) + #label no final de cada linha
+          method = list(list(dl.trans(x = x + 0.15), cex = 0.7, "last.points"))) + #label no final de cada linha
   coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 37)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
-  ggtitle("Taxa de Reprovação (em %) Anuas Nos Cursos de Ciências Exatas(2/2) - UFCG")
+  ggtitle("Taxa de Reprovação (em %) Anuais Nos Cursos de Ciências Exatas(2/2) - UFCG")
 
 ggplot(dfBiologicas, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Percentual)) +
   geom_line(size=1)+
@@ -194,9 +193,9 @@ ggplot(dfBiologicas, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=P
     legend.key = element_rect(fill="black")
   ) +
   geom_dl(aes(label = Curso),
-          method = list(list(dl.trans(x = x + 0.15), cex = 0.6, "last.points"))) + #label no final de cada linha
+          method = list(list(dl.trans(x = x + 0.15), cex = 0.7, "last.points"))) + #label no final de cada linha
   coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 26)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
-  ggtitle("Taxa de Reprovação (em %) Anuas Nos Cursos de Ciências Biológicas - UFCG")
+  ggtitle("Taxa de Reprovação (em %) Anuais Nos Cursos de Ciências Biológicas - UFCG")
 
