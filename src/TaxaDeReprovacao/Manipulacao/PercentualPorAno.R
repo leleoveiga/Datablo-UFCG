@@ -19,7 +19,7 @@ for (i in 2:55){
 }
 
 #separando em 2 tipos de dataframe. Fase de testes
-names(df)[2:19] = c("02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19")
+names(df)[2:19] = 2002:2019
 df1 <- melt(df, id.vars="Curso")
 names(df1)[2:3] <- c("Ano","Percentual") 
 
@@ -55,7 +55,7 @@ ggplot(dfHumanas1, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Cur
   scale_color_viridis(option = "plasma", discrete = TRUE) + #uma palheta de cores personalizada
   scale_y_continuous(breaks = c(seq(0, max(dfHumanas1$Percentual, na.rm = T)+50, 2))) + #subdivide o eixo y
   theme(
-    plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
+    plot.title = element_text(color="gray65",hjust=0,vjust=1, size=rel(1.5)),
     plot.background = element_rect(fill="black"), #cor da parte externa do fundo
     panel.background = element_rect(fill="black"), #cor da parte interna do fundo
     # panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"), #preencher NAs com outras coisas
@@ -72,12 +72,12 @@ ggplot(dfHumanas1, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Cur
     legend.key = element_rect(fill="black") #cor do fundo de cada valor
     
   ) +
-  geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.2)), cex = 0.8) +
+  geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.15, cex = 0.6))) +
   coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 35)) + #corrigir gap das barras
   # geom_text(data = dfHumanas1 %>% filter(Ano == last(Ano)), hjust = -0.1)                   
   xlab("Anos") +
   ylab("Percentual") +
-  ggtitle("Percentual de Reprovação x Ano.")
+  ggtitle("Taxa de Reprovação (em %) Anuas Nos Cursos de Ciências Humanas(1/2) - UFCG")
 
 ggplot(dfHumanas2, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Percentual)) +
   geom_line()+
@@ -85,7 +85,7 @@ ggplot(dfHumanas2, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Per
   scale_color_viridis(option = "plasma", discrete = TRUE) + #uma palheta de cores personalizada
   scale_y_continuous(breaks = c(seq(0, max(dfHumanas2$Percentual, na.rm = T)+50, 2))) +
   theme(
-    plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
+    plot.title = element_text(color="gray65",hjust=0,vjust=1, size=rel(1.5)),
     plot.background = element_rect(fill="black"), #cor da parte externa do fundo
     panel.background = element_rect(fill="black"), #cor da parte interna do fundo
     # panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"), #preencher NAs com outras coisas
@@ -102,18 +102,19 @@ ggplot(dfHumanas2, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Per
     legend.title= element_text(color="gray65"), #cor do titulo do preenchimento
     legend.key = element_rect(fill="black")
   ) +
-  geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.2)), cex = 0.8) +
-  coord_cartesian(xlim = c(1.6, 13), ylim = c(0.5, 35)) + #corrigir gap das barras
+  geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.15, cex = 0.6))) +
+  coord_cartesian(xlim = c(1.6, 12.5), ylim = c(0.5, 35)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
-  ggtitle("Percentual de Reprovação x Ano.")
+  ggtitle("Taxa de Reprovação (em %) Anuas Nos Cursos de Ciências Humanas(2/2) - UFCG")
+
 ggplot(dfExatas1, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Percentual)) +
   geom_line()+
   geom_point() +
   scale_color_viridis(option = "plasma", discrete = TRUE) + #uma palheta de cores personalizada
   scale_y_continuous(breaks = c(seq(0, max(dfExatas1$Percentual, na.rm = T)+50, 2))) +
   theme(
-    plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
+    plot.title = element_text(color="gray65",hjust=0,vjust=1, size=rel(1.5)),
     plot.background = element_rect(fill="black"), #cor da parte externa do fundo
     panel.background = element_rect(fill="black"), #cor da parte interna do fundo
     # panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"), #preencher NAs com outras coisas
@@ -130,18 +131,19 @@ ggplot(dfExatas1, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Perc
     legend.title= element_text(color="gray65"), #cor do titulo do preenchimento
     legend.key = element_rect(fill="black")
   ) +
-  geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.2)), cex = 0.8) +
+  geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.15, cex = 0.6))) +
   coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 39)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
-  ggtitle("Percentual de Reprovação x Ano.")
+  ggtitle("Taxa de Reprovação (em %) Anuas Nos Cursos de Ciências Exatas(1/2) - UFCG")
+
 ggplot(dfExatas2, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Percentual)) +
   geom_line()+
   geom_point() +
   scale_color_viridis(option = "plasma", discrete = TRUE) + #uma palheta de cores personalizada
   scale_y_continuous(breaks = c(seq(0, max(dfExatas2$Percentual, na.rm = T)+50, 2))) +
   theme(
-    plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
+    plot.title = element_text(color="gray65",hjust=0,vjust=1, size=rel(1.5)),
     plot.background = element_rect(fill="black"), #cor da parte externa do fundo
     panel.background = element_rect(fill="black"), #cor da parte interna do fundo
     # panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"), #preencher NAs com outras coisas
@@ -158,18 +160,19 @@ ggplot(dfExatas2, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Perc
     legend.title= element_text(color="gray65"), #cor do titulo do preenchimento
     legend.key = element_rect(fill="black")
   ) +
-  geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.2)), cex = 0.8) +
-  coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 35)) + #corrigir gap das barras
+  geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.15, cex = 0.6))) +
+  coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 37)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
-  ggtitle("Percentual de Reprovação x Ano.")
+  ggtitle("Taxa de Reprovação (em %) Anuas Nos Cursos de Ciências Exatas(2/2) - UFCG")
+
 ggplot(dfBiologicas, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Percentual)) +
   geom_line()+
   geom_point() +
   scale_color_viridis(option = "plasma", discrete = TRUE) + #uma palheta de cores personalizada
   scale_y_continuous(breaks = c(seq(0, max(dfBiologicas$Percentual, na.rm = T)+50, 2))) +
   theme(
-    plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
+    plot.title = element_text(color="gray65",hjust=0,vjust=1, size=rel(1.5)),
     plot.background = element_rect(fill="black"), #cor da parte externa do fundo
     panel.background = element_rect(fill="black"), #cor da parte interna do fundo
     # panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"), #preencher NAs com outras coisas
@@ -186,9 +189,9 @@ ggplot(dfBiologicas, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=P
     legend.title= element_text(color="gray65"), #cor do titulo do preenchimento
     legend.key = element_rect(fill="black")
   ) +
-  geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.2)), cex = 0.8) +
-  coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 37)) + #corrigir gap das barras
+  geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.15, cex = 0.6))) +
+  coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 26)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
-  ggtitle("Percentual de Reprovação x Ano.")
+  ggtitle("Taxa de Reprovação (em %) Anuas Nos Cursos de Ciências Biológicas - UFCG")
 
