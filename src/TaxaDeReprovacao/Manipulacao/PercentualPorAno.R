@@ -73,7 +73,7 @@ ggplot(dfHumanas1, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Cur
     
   ) +
   geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.2)), cex = 0.8) +
-  coord_cartesian(xlim = c(1.5, 20), ylim = c(1, 35)) + #corrigir gap das barras
+  coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 35)) + #corrigir gap das barras
   # geom_text(data = dfHumanas1 %>% filter(Ano == last(Ano)), hjust = -0.1)                   
   xlab("Anos") +
   ylab("Percentual") +
@@ -103,7 +103,7 @@ ggplot(dfHumanas2, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Per
     legend.key = element_rect(fill="black")
   ) +
   geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.2)), cex = 0.8) +
-  coord_cartesian(xlim = c(1.5, 13), ylim = c(1, 35)) + #corrigir gap das barras
+  coord_cartesian(xlim = c(1.6, 13), ylim = c(0.5, 35)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
   ggtitle("Percentual de Reprovação x Ano.")
@@ -131,7 +131,7 @@ ggplot(dfExatas1, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Perc
     legend.key = element_rect(fill="black")
   ) +
   geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.2)), cex = 0.8) +
-  coord_cartesian(xlim = c(1.5, 20), ylim = c(1, 39)) + #corrigir gap das barras
+  coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 39)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
   ggtitle("Percentual de Reprovação x Ano.")
@@ -159,7 +159,7 @@ ggplot(dfExatas2, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=Perc
     legend.key = element_rect(fill="black")
   ) +
   geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.2)), cex = 0.8) +
-  coord_cartesian(xlim = c(1.5, 20), ylim = c(1, 35)) + #corrigir gap das barras
+  coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 35)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
   ggtitle("Percentual de Reprovação x Ano.")
@@ -187,7 +187,7 @@ ggplot(dfBiologicas, aes(x=Ano, y=Percentual, colour=Curso, group=Curso, label=P
     legend.key = element_rect(fill="black")
   ) +
   geom_dl(aes(label = Curso), method = list(dl.combine("last.points"), dl.trans(x = x + 0.2)), cex = 0.8) +
-  coord_cartesian(xlim = c(1.5, 20), ylim = c(1, 37)) + #corrigir gap das barras
+  coord_cartesian(xlim = c(1.6, 19.5), ylim = c(0.5, 37)) + #corrigir gap das barras
   xlab("Anos") +
   ylab("Percentual") +
   ggtitle("Percentual de Reprovação x Ano.")
