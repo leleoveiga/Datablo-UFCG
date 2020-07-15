@@ -138,8 +138,8 @@ ggplot(data = Final.Total,
   scale_fill_viridis_c(option = "cividis") + #uma palheta de cores personalizada
   theme(
     plot.title = element_text(color="white",hjust=0,vjust=1, size=rel(1.5)),
-    plot.background = element_rect(fill="gray20"), #cor da parte externa do fundo
-    panel.background = element_rect(fill="gray20"), #cor da parte interna do fundo
+    plot.background = element_rect(fill="black"), #cor da parte externa do fundo
+    panel.background = element_rect(fill="black"), #cor da parte interna do fundo
     # # panel.border = element_rect(fill=NA,color="gray20", size=0.5, linetype="solid"), #preencher NAs com outras coisas
     panel.grid.major = element_line(colour ="gray30"), #grade maior
     panel.grid.minor = element_blank(), #grade menor
@@ -149,7 +149,7 @@ ggplot(data = Final.Total,
     axis.title = element_text(color="white"), #cor do titulo dos eixos
     # axis.text.y  = element_text(hjust=1), #posicao do texto do eixo y
     legend.text = element_text(color="gray75", size=rel(1)), #cor do texto da legenda secundaria
-    legend.background = element_rect(fill="gray20"), #cor do fundo da legenda secundaria
+    legend.background = element_rect(fill="black"), #cor do fundo da legenda secundaria
     # legend.position = "bottom", #posicao do preenchimento
     legend.title= element_text(color="gray75") #cor do titulo do preenchimento
   ) +
