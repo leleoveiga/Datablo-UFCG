@@ -5,6 +5,8 @@ library(readr)
 library(ggplot2)
 library(tibble)
 library(purrr)
+library(viridis)
+library(directlabels)
 
 
 ####Consertando a CAGADA de LEO####
@@ -170,11 +172,10 @@ for (i in 1:length(listaDf)) {
 
 write_delim(MegaDF, "MegaDF.csv", delim = ";")
 
-####Plots Engenharias####
-  #Preparando DFs finos
+####Criando Recortes Engenharia####
 
 #Engenharias
-engenharias <- MegaDF[c(10:17, 30, 34:35, 37:39),] #Criando um DF com dados das engenharias
+engenharias <- df[c(10:17, 30, 34:35, 37:39),] #Criando um DF com dados das engenharias
 engenharias <- arrange(engenharias) 
 
 n = 2
@@ -218,30 +219,6 @@ while (n <= 55){ #Percorre o DF e salva apenas as colunas de matrículas
 colnames(engenhariasper) <- paste0("", 2001:2019)
 names(engenhariasper)[1] <- "Curso"
 
-c <- as.vector(engenharias$Curso)
-a <- c(2002:2019)
-
-engenhariasmat <- as.data.frame(t(engenhariasmat))
-engenhariasmat <- engenhariasmat[-1,]
-names(engenhariasmat) <- c
-engenhariasmat <- add_column(engenhariasmat, Ano = a, .after = 0)
-
-
-engenhariasrep <- as.data.frame(t(engenhariasrep))
-engenhariasrep <- engenhariasrep[-1,]
-names(engenhariasrep) <- c
-
-
-engenhariasper <- as.data.frame(t(engenhariasper))
-engenhariasper <- engenhariasper[-1,]
-names(engenhariasper) <- c
-
-n <- 5
-a <- 2
-while (n <= 55){
-  a <- c(a, n)
-  n <- n + 3
-}
 
 engmat <- melt(engenhariasmat, id.vars="Curso")
 engrep <- melt(engenhariasrep, id.vars = "Curso")
@@ -252,29 +229,110 @@ names(engmat)[2:3] <- c("Ano", "Matrículas")
 names(engrep)[2:3] <- c('Ano', 'Reprovações')
 names(engper)[2:3] <- c('Ano', 'Percentual')
 
+####Plots Engenharias####
+# Matrículas
 ggplot(data = engmat,
+       colours(Curso),
        mapping = aes(x = Ano,
                      y = Matrículas,
                      group = Curso,
-                     col = Curso,
-                     label = )) +
-  geom_line() + 
-  geom_point()
+                     Col = Curso,
+                     label = Matrículas,
+                     colour = Curso)) +
+  theme(panel.background = element_rect(fill="black"),
+        plot.title = element_text(colour = "grey65"),
+        plot.background = element_rect(fill="black"),
+        panel.grid.major = element_line(colour ="grey65"),
+        axis.ticks = element_line(color="grey65"),
+        axis.text = element_text(color="grey65"),
+        axis.title = element_text(color="grey65"),
+        legend.background = element_rect(fill="black"),
+        legend.text = element_text(color="gray65", size=rel(1)),
+        legend.title= element_text(color="grey65"),
+        legend.key = element_rect(fill = "black"),
+        axis.line = element_line(color="white"))+
+  scale_y_continuous(breaks = c(seq(0, max(engmat$Matrículas, na.rm = T)+200, 1000))) +
+  coord_cartesian(xlim = c(1.6, 19.5)) +
+  scale_color_manual(
+    values = c("#8a5842","#f22405", "#e3d912", "#730505", "#02eddd", "#0c8fed",
+               "#1a49f0", "#950ff5", "#e600ff", "#fafafa", "#f7a3db", "#90f594",
+               "#fc8700", "#00ff11")) +
+  geom_line() +
+  geom_point() +
+  xlab('Ano') +
+  ylab('Matrículas') +
+  ggtitle('Número de Matrículas Totais por Ano nos Cursos de Engenharia - UFCG')
 
+# Reprovações
 ggplot(data = engrep,
+       colours(Curso),
        mapping = aes(x = Ano,
                      y = Reprovações,
                      group = Curso,
                      Col = Curso,
-                     label = Reprovações)) +
-  geom_text(hjust = -0.5, size = rel(4), color = "darkblue") +
+                     label = Reprovações,
+                     colour = Curso)) +
+  theme(panel.background = element_rect(fill="black"),
+        plot.title = element_text(colour = "grey65"),
+        plot.background = element_rect(fill="black"),
+        panel.grid.major = element_line(colour ="grey65"),
+        axis.ticks = element_line(color="grey65"),
+        axis.text = element_text(color="grey65"),
+        axis.title = element_text(color="grey65"),
+        legend.background = element_rect(fill="black"),
+        legend.text = element_text(color="gray65", size=rel(1)),
+        legend.title= element_text(color="grey65"),
+        legend.key = element_rect(fill = "black"),
+        axis.line = element_line(color="white"))+
+  scale_y_continuous(breaks = c(seq(0, max(engrep$Reprovações, na.rm = T)+200, 150))) +
+  coord_cartesian(xlim = c(1.6, 19.5)) +
+  scale_color_manual(
+    values = c("#8a5842","#f22405", "#e3d912", "#730505", "#02eddd", "#0c8fed",
+               "#1a49f0", "#950ff5", "#e600ff", "#fafafa", "#f7a3db", "#90f594",
+               "#fc8700", "#00ff11")) +
   geom_line() +
   geom_point() +
   xlab('Ano') +
   ylab('Reprovações') +
   ggtitle('Número de Reprovações Anuais Nos Cursos de Engenharia - UFCG')
 
+# Percentual de Reprovação
 
+ggplot(data = engper,
+       colours(Curso),
+       mapping = aes(x = Ano,
+                     y = Percentual,
+                     group = Curso,
+                     Col = Curso,
+                     label = Percentual,
+                     colour = Curso)) +
+  theme(panel.background = element_rect(fill="black"),
+        plot.title = element_text(colour = "grey65"),
+        plot.background = element_rect(fill="black"),
+        panel.grid.major = element_line(colour ="grey65"),
+        axis.ticks = element_line(color="grey65"),
+        axis.text = element_text(color="grey65"),
+        axis.title = element_text(color="grey65"),
+        legend.background = element_rect(fill="black"),
+        legend.text = element_text(color="gray65", size=rel(1)),
+        legend.title= element_text(color="grey65"),
+        legend.key = element_rect(fill = "black"),
+        axis.line = element_line(color="white"))+
+  coord_cartesian(xlim = c(1.6, 19.5)) +
+  scale_y_continuous(breaks = c(seq(0, max(engper$Percentual, na.rm = T)+10, 2))) +
+  scale_color_manual(
+    values = c("#8a5842","#f22405", "#e3d912", "#730505", "#02eddd", "#0c8fed",
+               "#1a49f0", "#950ff5", "#e600ff", "#fafafa", "#f7a3db", "#90f594",
+               "#fc8700", "#00ff11")) +
+  geom_line() +
+  geom_line() +
+  geom_point() +
+  xlab('Ano') +
+  ylab('Percentual') +
+  ggtitle('Taxa de Reprovação (em %) Anuais Nos Cursos de Engenharia - UFCG')
+
+
+dput(head(engrep, 28))
 
 
 df <- read.delim(
@@ -283,6 +341,4 @@ df <- read.delim(
 
 
 ####Criação DF de área de conhecimento####
-
-
 
