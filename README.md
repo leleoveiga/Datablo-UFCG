@@ -1,5 +1,6 @@
 # Análise de Dados da UFCG
 Projeto iniciado por estudantes da UFCG com intuito de mostrar dados sobre a instituição de forma clara e intuitiva.
+https://portal.ufcg.edu.br/ultimas-noticias/2127-projeto-de-alunos-da-ufcg-converte-informacoes-da-instituicao-em-dados-estatisticos.html
 
 ### Integrantes:
 **Yohan Lopes** | **yohanhxh@gmail.com**
