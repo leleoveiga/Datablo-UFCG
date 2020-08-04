@@ -9,14 +9,14 @@ library(viridis)
 library(directlabels)
 library(reshape2)
 
+names(stat_geral)[1:5] <- c(
+  'Ano', 'Alunos Matriculados', 'Professores', 'Ingressantes', 'Graduados')
 
 base <- read.delim(
   file = "~/Documentos/stat_geral.csv", encoding = "UTF-8", sep = ";")
 
 base <- stat_geral
 
-names(base)[1:5] <- c(
-  'Ano', 'Alunos Matriculados', 'Professores', 'Ingressantes', 'Graduados')
 base$`Alunos Matriculados` <- NULL
 
 base <- melt(base, id.vars = 'Ano')
