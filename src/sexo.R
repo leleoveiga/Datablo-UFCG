@@ -281,9 +281,22 @@ Ano2020.1$Período <- as.character(Ano2020.1$Período)
 Ano2020.1$Período[1] <- '2020-1'
 }
 
+dfFinal = setNames(data.frame(matrix(ncol = 1, nrow = 0)), c("Período"))
+dfFinal$Período <- as.character(dfFinal$Período)
 
+listaDf <- list(Ano2002.1, Ano2002.2, Ano2003.1, Ano2003.2, Ano2004.1, Ano2004.2,
+                Ano2005.1, Ano2005.2, Ano2006.1, Ano2006.2, Ano2007.1, Ano2007.2,
+                Ano2008.1, Ano2008.2, Ano2009.1, Ano2009.2, Ano2010.1, Ano2010.2,
+                Ano2011.1, Ano2011.2, Ano2012.1, Ano2012.2, Ano2013.1, Ano2013.2,
+                Ano2014.1, Ano2014.2, Ano2015.1, Ano2015.2, Ano2016.1, Ano2016.2,
+                Ano2017.1, Ano2017.2, Ano2018.1, Ano2018.2, Ano2019.1, Ano2019.2,
+                Ano2020.1)
 
+for (i in 1:length(listaDf)) {
+  dfFinal <- rbind(dfFinal, listaDf[[i]])
+}
 
+dfFinal <- arrange()
 
 
 
