@@ -11,43 +11,43 @@ for (i in arquivos){
 }
  #Estudar como ler vários arquivos de uma só vez
 {
-"Ano2002.1" <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2002.1.csv")
-'Ano2002.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2002.2.csv")
-'Ano2003.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2003.1.csv")
-'Ano2003.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2003.2.csv")
-'Ano2004.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2004.1.csv")
-'Ano2004.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2004.2.csv")
-'Ano2005.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2005.1.csv")
-'Ano2005.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2005.2.csv")
-'Ano2006.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2006.1.csv")
-'Ano2006.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2006.2.csv")
-'Ano2007.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2007.1.csv")
-'Ano2007.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2007.2.csv")
-'Ano2008.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2008.1.csv")
-'Ano2008.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2008.2.csv")
-'Ano2009.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2009.1.csv")
-'Ano2009.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2009.2.csv")
-'Ano2010.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2010.1.csv")
-'Ano2010.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2010.2.csv")
-'Ano2011.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2011.1.csv")
-'Ano2011.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2011.2.csv")
-'Ano2012.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2012.1.csv")
-'Ano2012.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2012.2.csv")
-'Ano2013.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2013.1.csv")
-'Ano2013.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2013.2.csv")
-'Ano2014.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2014.1.csv")
-'Ano2014.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2014.2.csv")
-'Ano2015.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2015.1.csv")
-'Ano2015.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2015.2.csv")
-'Ano2016.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2016.1.csv")
-'Ano2016.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2016.2.csv")
-'Ano2017.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2017.1.csv")
-'Ano2017.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2017.2.csv")
-'Ano2018.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2018.1.csv")
-'Ano2018.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2018.2.csv")
-'Ano2019.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2019.1.csv")
-'Ano2019.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2019.2.csv")
-'Ano2020.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/Dados Crus/MatriculasPorSexo/2020.1.csv")
+"Ano2002.1" <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2002.1.csv")
+'Ano2002.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2002.2.csv")
+'Ano2003.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2003.1.csv")
+'Ano2003.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2003.2.csv")
+'Ano2004.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2004.1.csv")
+'Ano2004.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2004.2.csv")
+'Ano2005.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2005.1.csv")
+'Ano2005.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2005.2.csv")
+'Ano2006.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2006.1.csv")
+'Ano2006.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2006.2.csv")
+'Ano2007.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2007.1.csv")
+'Ano2007.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2007.2.csv")
+'Ano2008.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2008.1.csv")
+'Ano2008.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2008.2.csv")
+'Ano2009.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2009.1.csv")
+'Ano2009.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2009.2.csv")
+'Ano2010.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2010.1.csv")
+'Ano2010.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2010.2.csv")
+'Ano2011.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2011.1.csv")
+'Ano2011.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2011.2.csv")
+'Ano2012.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2012.1.csv")
+'Ano2012.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2012.2.csv")
+'Ano2013.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2013.1.csv")
+'Ano2013.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2013.2.csv")
+'Ano2014.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2014.1.csv")
+'Ano2014.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2014.2.csv")
+'Ano2015.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2015.1.csv")
+'Ano2015.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2015.2.csv")
+'Ano2016.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2016.1.csv")
+'Ano2016.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2016.2.csv")
+'Ano2017.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2017.1.csv")
+'Ano2017.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2017.2.csv")
+'Ano2018.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2018.1.csv")
+'Ano2018.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2018.2.csv")
+'Ano2019.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2019.1.csv")
+'Ano2019.2' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2019.2.csv")
+'Ano2020.1' <- read.csv("~/Documentos/Analise-de-Dados-da-UFCG/DadosCrus/MatriculasPorSexo/2020.1.csv")
 }
 
 {
@@ -131,81 +131,155 @@ Ano2019.2
 Ano2020.1
 }
 
+{
 names(Ano2002.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2002.1$Período[1] <- 2002.1
-names(Ano2002.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2002.2$Período[1] <- 2002.2
-names(Ano2003.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2003.1$Período[1] <- 2003.1
-names(Ano2003.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2003.2$Período[1] <- 2003.2
-names(Ano2004.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2004.1$Período[1] <- 2004.1
-names(Ano2004.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2004.2$Período[1] <- 2004.2
-names(Ano2005.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2005.1$Período[1] <- 2005.1
-names(Ano2005.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2005.2$Período[1] <- 2005.2
-names(Ano2006.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2006.1$Período[1] <- 2006.1
-names(Ano2006.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2006.2$Período[1] <- 2006.2
-names(Ano2007.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2007.1$Período[1] <- 2007.1
-names(Ano2007.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2007.2$Período[1] <- 2007.2
-names(Ano2008.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2008.1$Período[1] <- 2008.1
-names(Ano2008.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2008.2$Período[1] <- 2008.2
-names(Ano2009.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2009.1$Período[1] <- 2009.1
-names(Ano2009.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2009.2$Período[1] <- 2009.2
-names(Ano2010.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2010.1$Período[1] <- 2010.1
-names(Ano2010.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2010.2$Período[1] <- 2010.2
-names(Ano2011.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2011.1$Período[1] <- 2011.1
-names(Ano2011.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2011.2$Período[1] <- 2011.2
-names(Ano2012.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2012.1$Período[1] <- 2012.1
-names(Ano2012.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2012.2$Período[1] <- 2012.2
-names(Ano2013.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2013.1$Período[1] <- 2013.1
-names(Ano2013.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2013.2$Período[1] <- 2013.2
-names(Ano2014.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2014.1$Período[1] <- 2014.1
-names(Ano2014.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2014.2$Período[1] <- 2014.2
-names(Ano2015.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2015.1$Período[1] <- 2015.1
-names(Ano2015.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2015.2$Período[1] <- 2015.2
-names(Ano2016.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2016.1$Período[1] <- 2016.1
-names(Ano2016.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2016.2$Período[1] <- 2016.2
-names(Ano2017.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2017.1$Período[1] <- 2017.1
-names(Ano2017.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2017.2$Período[1] <- 2017.2
-names(Ano2018.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2018.1$Período[1] <- 2018.1
-names(Ano2018.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2018.2$Período[1] <- 2018.2
-names(Ano2019.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2019.1$Período[1] <- 2019.1
-names(Ano2019.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2019.2$Período[1] <- 2019.2
-names(Ano2020.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
-Ano2020.1$Período[1] <- 2020.1
+Ano2002.1$Período <- as.character(Ano2002.1$Período)
+Ano2002.1$Período[1] <- '2002-1'
 
+names(Ano2002.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2002.2$Período <- as.character(Ano2002.2$Período)
+Ano2002.2$Período[1] <- '2002-2'
+
+names(Ano2003.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2003.1$Período <- as.character(Ano2003.1$Período)
+Ano2003.1$Período[1] <- '2003-1'
+
+names(Ano2003.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2003.2$Período <- as.character(Ano2003.2$Período)
+Ano2003.2$Período[1] <- '2003-2'
+
+names(Ano2004.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2004.1$Período <- as.character(Ano2004.1$Período)
+Ano2004.1$Período[1] <- '2004-1'
+
+names(Ano2004.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2004.2$Período <- as.character(Ano2004.2$Período)
+Ano2004.2$Período[1] <- '2004-2'
+
+names(Ano2005.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2005.1$Período <- as.character(Ano2005.1$Período)
+Ano2005.1$Período[1] <- '2005-1'
+
+names(Ano2005.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2005.2$Período <- as.character(Ano2005.2$Período)
+Ano2005.2$Período[1] <- '2005-2'
+
+names(Ano2006.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2006.1$Período <- as.character(Ano2006.1$Período)
+Ano2006.1$Período[1] <- '2006-1'
+
+names(Ano2006.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2006.2$Período <- as.character(Ano2006.2$Período)
+Ano2006.2$Período[1] <- '2006-2'
+
+names(Ano2007.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2007.1$Período <- as.character(Ano2007.1$Período)
+Ano2007.1$Período[1] <- '2007-1'
+
+names(Ano2007.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2007.2$Período <- as.character(Ano2007.2$Período)
+Ano2007.2$Período[1] <- '2007-2'
+
+names(Ano2008.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2008.1$Período <- as.character(Ano2008.1$Período)
+Ano2008.1$Período[1] <- '2008-1'
+
+names(Ano2008.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2008.2$Período <- as.character(Ano2008.2$Período)
+Ano2008.2$Período[1] <- '2008-2'
+
+names(Ano2009.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2009.1$Período <- as.character(Ano2009.1$Período)
+Ano2009.1$Período[1] <- '2009-1'
+
+names(Ano2009.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2009.2$Período <- as.character(Ano2009.2$Período)
+Ano2009.2$Período[1] <- '2009-2'
+
+names(Ano2010.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2010.1$Período <- as.character(Ano2010.1$Período)
+Ano2010.1$Período[1] <- '2010-1'
+
+names(Ano2010.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2010.2$Período <- as.character(Ano2010.2$Período)
+Ano2010.2$Período[1] <- '2010-2'
+
+names(Ano2011.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2011.1$Período <- as.character(Ano2011.1$Período)
+Ano2011.1$Período[1] <- '2011-1'
+
+names(Ano2011.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2011.2$Período <- as.character(Ano2011.2$Período)
+Ano2011.2$Período[1] <- '2011-2'
+
+names(Ano2012.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2012.1$Período <- as.character(Ano2012.1$Período)
+Ano2012.1$Período[1] <- '2012-1'
+
+names(Ano2012.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2012.2$Período <- as.character(Ano2012.2$Período)
+Ano2012.2$Período[1] <- '2012-2'
+
+names(Ano2013.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2013.1$Período <- as.character(Ano2013.1$Período)
+Ano2013.1$Período[1] <- '2013-1'
+
+names(Ano2013.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2013.2$Período <- as.character(Ano2013.2$Período)
+Ano2013.2$Período[1] <- '2013-2'
+
+names(Ano2014.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2014.1$Período <- as.character(Ano2014.1$Período)
+Ano2014.1$Período[1] <- '2014-1'
+
+names(Ano2014.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2014.2$Período <- as.character(Ano2014.2$Período)
+Ano2014.2$Período[1] <- '2014-2'
+
+names(Ano2015.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2015.1$Período <- as.character(Ano2015.1$Período)
+Ano2015.1$Período[1] <- '2015-1'
+
+names(Ano2015.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2015.2$Período <- as.character(Ano2015.2$Período)
+Ano2015.2$Período[1] <- '2015-2'
+
+names(Ano2016.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2016.1$Período <- as.character(Ano2016.1$Período)
+Ano2016.1$Período[1] <- '2016-1'
+
+names(Ano2016.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2016.2$Período <- as.character(Ano2016.2$Período)
+Ano2016.2$Período[1] <- '2016-2'
+
+names(Ano2017.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2017.1$Período <- as.character(Ano2017.1$Período)
+Ano2017.1$Período[1] <- '2017-1'
+
+names(Ano2017.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2017.2$Período <- as.character(Ano2017.2$Período)
+Ano2017.2$Período[1] <- '2017-2'
+
+names(Ano2018.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2018.1$Período <- as.character(Ano2018.1$Período)
+Ano2018.1$Período[1] <- '2018-1'
+
+names(Ano2018.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2018.2$Período <- as.character(Ano2018.2$Período)
+Ano2018.2$Período[1] <- '2018-2'
+
+names(Ano2019.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2019.1$Período <- as.character(Ano2019.1$Período)
+Ano2019.1$Período[1] <- '2019-1'
+
+names(Ano2019.2)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2019.2$Período <- as.character(Ano2019.2$Período)
+Ano2019.2$Período[1] <- '2019-2'
+
+names(Ano2020.1)[1:4] <- c('Período', 'Feminino', 'Masculino', 'Total')
+Ano2020.1$Período <- as.character(Ano2020.1$Período)
+Ano2020.1$Período[1] <- '2020-1'
+}
 
 
 
