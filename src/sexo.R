@@ -296,7 +296,7 @@ for (i in 1:length(listaDf)) {
   dfFinal <- rbind(dfFinal, listaDf[[i]])
 }
 
-dfFinal <- arrange()
+row.names(dfFinal) <- NULL   #Corrige linhas com numeros errados
 
 
 
