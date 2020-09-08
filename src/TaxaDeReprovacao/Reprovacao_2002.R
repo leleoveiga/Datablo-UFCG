@@ -59,6 +59,6 @@ dfAgrupado <- add_column(dfAgrupado, Porcentagem.2 = porcentagem.total.2, .after
 
 dfAgrupado[is.na(dfAgrupado)] <- 0.0
 
-write_delim(dfAgrupado, "~/Analise-de-Dados-da-UFCG/Dados Processados/TaxaDeReprovacao/Reprovacao_2002.csv", delim = ";")
+write_delim(dfAgrupado, "~/Analise-de-Dados-da-UFCG/DadosProcessados/TaxaDeReprovacao/Reprovacao_2002.csv", delim = ";")
 
 

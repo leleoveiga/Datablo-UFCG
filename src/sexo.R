@@ -298,6 +298,8 @@ for (i in 1:length(listaDf)) {
 
 row.names(dfFinal) <- NULL   #Corrige linhas com numeros errados
 
+write_delim(
+  dfFinal, "~/Documentos/Analise-de-Dados-da-UFCG/DadosProcessados/MatriculasSemestraisPorSexo.csv", delim = ";")
 
 
 
