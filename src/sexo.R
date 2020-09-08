@@ -301,7 +301,48 @@ row.names(dfFinal) <- NULL   #Corrige linhas com numeros errados
 write_delim(
   dfFinal, "~/Documentos/Analise-de-Dados-da-UFCG/DadosProcessados/MatriculasSemestraisPorSexo.csv", delim = ";")
 
+#### Plots ####
 
+dfDerretido <- dfFinal
+
+dfDerretido <- melt(dfDerretido, id.vars = 'Período')
+dfDerretido <- dfDerretido[-c(75:111),]
+dfDerretido$value <- as.numeric(dfDerretido$value)
+
+ggplot(data = dfDerretido,
+       mapping = aes(
+         x = Período,
+         y = value,
+         group = variable,
+         Col = Período,
+         label = value,
+         colour = variable
+       )) +
+  theme(panel.background = element_rect(fill='#131313'),
+        plot.title = element_text(colour = "grey65"),
+        plot.background = element_rect(fill='#131313'),
+        panel.grid.major = element_line(colour ="grey65"),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank(),
+        title = element_text(size = 25),
+        axis.ticks = element_line(color="grey65"),
+        axis.text = element_text(color="grey65"),
+        axis.title = element_text(color="grey65"),
+        axis.line = element_line(color="white"),
+        axis.text.x = element_text(angle = 45, vjust = .5, size = 17.0),
+        axis.text.y = element_text(angle = 0, vjust = .3, size = 15.0),
+        legend.background = element_rect(fill = '#131313'),
+        legend.margin = margin(t = 0, r = 5, b = 0, l = 5, unit = "pt"),
+        legend.text = element_text(color = 'white', size = 15.0),
+        legend.title = element_blank(),
+        legend.box.background = element_rect(fill = '#131313')) +
+  scale_y_continuous(breaks = c(seq(0, max(dfDerretido$value, na.rm = T) + 1000, 1000))) +
+  xlab(NULL) +
+  ylab(NULL) +
+  ggtitle("Quantidade de Matriculados por Sexo por Período - UFCG") +
+  geom_line(size = 0.5) +
+  geom_point(size = 1.3) +
+  geom_line()
 
 
 
