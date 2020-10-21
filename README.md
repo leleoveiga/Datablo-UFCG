@@ -1,11 +1,19 @@
-# Análise de Dados da UFCG
-Projeto iniciado por estudantes da UFCG com intuito de mostrar dados sobre a instituição de forma clara e intuitiva.
-https://portal.ufcg.edu.br/ultimas-noticias/2127-projeto-de-alunos-da-ufcg-converte-informacoes-da-instituicao-em-dados-estatisticos.html
+# Como Nasceu o Projeto?
+### O Princípio
+Tudo começou com a descoberta do portal de transparência da UFCG, uma olhada rápida na plataforma revelou uma série de informações não só interessantes, mas potencialmente úteis para alguns alunos. Entretanto, a falta de intuitividade e facilidade de interpretação dos dados mascaravam sua beleza. Daí surgiu a ideia de fazer uma limpeza, organização e visualização desses dados. 
+
+### O Nascimento do Datablo:
+Após os trabalhos iniciais, enxergamos um campo inexplorado dentro da UFCG. Como a instituição grande que é, a universidade gera toneladas e toneladas de dados anualmente, grande parte deles perfeitamente acessíveis ao público, em acordo com as políticas federais de transparência. Entretanto, apesar de disponíveis, essas informações não chegam naturalmente à comunidade acadêmica. É nesse contexto que surge o Datablo, um laboratório com o objetivo de servir de ponte para que a informação não só chegue à comunidade, mas que seja inteligível. Além disso, queremos enriquecê-la, dando voz aos estudantes a partir da criação de uma pesquisa de opinião pública, no que diz respeitos aos serviços prestados pela UFCG.
 
 ### Integrantes:
-**Yohan Lopes** | **yohanhxh@gmail.com**
---- | ---
-**Leonardo Veiga** | **leonardo.porfirio@ccc.ufcg.edu.br**
+**Yohan Lopes** | **yohan.rodrigues@ccc.ufcg.edu.br** | **https://www.linkedin.com/in/yoyolops/**
+--- | --- | ---
+**Leonardo Veiga** | **leonardo.porfirio@ccc.ufcg.edu.br** | **https://www.linkedin.com/in/leonardo-veiga42/**
+
+### Links e Informações Úteis:
+1. Você pode encontrar uma amostra do nosso trabalho no [twitter](https://twitter.com/datablo);
+2. Veja nossa menção no [portal oficial da UFCG](https://portal.ufcg.edu.br/ultimas-noticias/2127-projeto-de-alunos-da-ufcg-converte-informacoes-da-instituicao-em-dados-estatisticos.html);
+3. Estamos à procura de membros. Tem interesse? Mande um e-mail com seu currículo para: yohanhxh@gmail.com
 
 ### Alguns gráficos feitos:
 
