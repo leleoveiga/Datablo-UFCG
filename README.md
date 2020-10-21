@@ -9,6 +9,9 @@ https://portal.ufcg.edu.br/ultimas-noticias/2127-projeto-de-alunos-da-ufcg-conve
 
 ### Alguns gráficos feitos:
 
+**Matrículas por sexo:**
+![alt text](./Plots/sexo/MatriculasPorSexo.png)
+
 **Alunos ativos, preenchido com vagas ociosas, em todos os campus (2019):**
 ![alt text](https://i.imgur.com/IYnJ7mK.png)
 
