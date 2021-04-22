@@ -8,7 +8,7 @@ Após os trabalhos iniciais, enxergamos um campo inexplorado dentro da UFCG. Com
 ### Integrantes:
 **Yohan Lopes** | **yohan.rodrigues@ccc.ufcg.edu.br** | **https://www.linkedin.com/in/yoyolops/**
 --- | --- | ---
-**Leonardo Veiga** | **leonardo.porfirio@ccc.ufcg.edu.br** | **https://www.linkedin.com/in/leonardo-veiga42/**
+**Leonardo Veiga** | **leonardo.porfirio@ccc.ufcg.edu.br** | **https://www.linkedin.com/in/leleoveiga/**
 
 ### Links e Informações Úteis:
 1. Você pode encontrar uma amostra do nosso trabalho no [twitter](https://twitter.com/datablo);
@@ -22,6 +22,9 @@ Após os trabalhos iniciais, enxergamos um campo inexplorado dentro da UFCG. Com
 
 **Alunos ativos, preenchido com vagas ociosas, em todos os campus (2019):**
 ![alt text](https://i.imgur.com/IYnJ7mK.png)
+
+**Taxa de reprovação na área de Ciências Exatas:**
+![alt text](https://pbs.twimg.com/media/Ecq5AZuWkAQjNN9?format=png&name=large)
 
 **Taxa de reprovação nas engenharias:**
 ![alt text](https://pbs.twimg.com/media/Ecirb4EXkAAiNvz?format=png&name=large)
