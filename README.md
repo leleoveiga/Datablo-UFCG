@@ -13,7 +13,6 @@ Após os trabalhos iniciais, enxergamos um campo inexplorado dentro da UFCG. Com
 ### Links e Informações Úteis:
 1. Você pode encontrar uma amostra do nosso trabalho no [twitter](https://twitter.com/datablo);
 2. Veja nossa menção no [portal oficial da UFCG](https://portal.ufcg.edu.br/ultimas-noticias/2127-projeto-de-alunos-da-ufcg-converte-informacoes-da-instituicao-em-dados-estatisticos.html);
-3. Estamos à procura de membros. Tem interesse? Mande um e-mail com seu currículo para: yohanhxh@gmail.com
 
 ### Alguns gráficos feitos:
 
